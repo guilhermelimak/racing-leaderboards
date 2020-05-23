@@ -1,6 +1,7 @@
 import firebase from "firebase";
 import "@firebase/firestore";
-import { Stage, Entry } from "./types";
+import "@firebase/storage";
+import { Entry } from "./types";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAEmbQ2is5G7rx1qUtm-XEHuORlCqcpmo8",
@@ -35,6 +36,9 @@ export const api = {
       }),
 
   createEntry: (entry: Entry) => db.collection("entries").add(entry),
+
+  login: ({ email, password }: { email: string; password: string }) =>
+    firebase.auth().signInWithEmailAndPassword(email, password),
 
   uploadImage: (file: File): Promise<string> =>
     firebase

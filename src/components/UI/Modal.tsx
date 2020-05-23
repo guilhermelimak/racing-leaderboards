@@ -59,6 +59,17 @@ interface Props {
 }
 
 export const Modal: FC<Props> = ({ title, children, onModalClose }) => {
+  // Close modal on esc, deactivated for now so we don't press esc by accident and
+  // lose what you had on the modal. Maybe enable in the future
+  // useEffect(() => {
+  //   const closeOnEsc = (event: KeyboardEvent) =>
+  //     event.keyCode === 27 && onModalClose();
+  //
+  //   document.addEventListener("keydown", closeOnEsc);
+  //
+  //   return () => document.removeEventListener("keydown", closeOnEsc);
+  // }, [, onModalClose]);
+
   return (
     <ModalWrapper>
       <ModalBody>

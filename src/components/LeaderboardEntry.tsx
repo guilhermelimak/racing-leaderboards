@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import styled from "@emotion/styled";
 import { Entry } from "../types";
-import { Modal } from "./Modal";
+import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
 
 interface Props {

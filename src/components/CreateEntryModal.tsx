@@ -1,5 +1,5 @@
 import React, { FC, useState, ChangeEvent } from "react";
-import { Modal } from "./Modal";
+import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
 import { Car, Stage, RaceTypes, Conditions } from "../types";
 import Select from "react-select";
@@ -7,6 +7,8 @@ import { stages } from "../dirt2-data/stages";
 import { Global, css } from "@emotion/core";
 import { api } from "../service";
 import styled from "@emotion/styled";
+import { LabeledInput } from "./UI/LabeledInput";
+import { Button } from "./UI/Button";
 
 interface SelectOption<T> {
   value: T;
@@ -100,9 +102,7 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
           <Select
             value={car}
             onChange={option => setCar(option as Car)}
-            getOptionLabel={option =>
-              `${option.name} [${option.type}][${option.carClass}]`
-            }
+            getOptionLabel={option => `${option.name} [${option.carClass}]`}
             options={cars.filter(c => c.type === raceType.value)}
           />
         </label>
@@ -112,53 +112,28 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
           <Select
             value={stage}
             onChange={option => setStage(option as Stage)}
-            getOptionLabel={option =>
-              `${option.stage} [${option.direction}][${option.location}]`
-            }
+            getOptionLabel={option => `${option.stage} [${option.location}]`}
             options={stages}
           />
         </label>
 
-        <label>
-          Time
-          <input
-            type="text"
-            name="time"
-            value={time}
-            onChange={e => setTime(e.target.value)}
-          />
-        </label>
+        <LabeledInput label="Time" value={time} onChange={setTime} />
+
+        <LabeledInput label="Player" value={player} onChange={setPlayer} />
+
+        <LabeledInput label="Replay" value={replay} onChange={setReplay} />
 
         <label>
-          Player
+          Screenshot
           <input
-            type="text"
-            name="player"
-            value={player}
-            onChange={e => setPlayer(e.target.value)}
+            accept="image/*"
+            type="file"
+            name="screenshot"
+            onChange={handleFileChosen}
           />
         </label>
-
-        <label>
-          Replay
-          <input
-            type="text"
-            name="replay"
-            value={replay}
-            onChange={e => setReplay(e.target.value)}
-          />
-        </label>
-
-        <input
-          accept="image/*"
-          type="file"
-          name="screenshot"
-          onChange={handleFileChosen}
-        />
       </FormContainer>
-      <button type="button" onClick={() => createEntry()}>
-        submit
-      </button>
+      <Button onClick={() => createEntry()}>submit</Button>
     </Modal>
   );
 };
