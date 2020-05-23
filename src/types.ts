@@ -46,7 +46,7 @@ export enum Conditions {
   Wet = "Wet"
 }
 
-export interface Track {
+export interface Stage {
   id: number;
   location: Locations;
   stage: string;
@@ -55,21 +55,23 @@ export interface Track {
 }
 
 export interface Entry {
-  id: number;
-  trackId: number;
+  id?: number;
+  stageId: number;
+  carId: number;
   player: string;
   condition: Conditions;
   time: string;
-  image: string;
+  imageUrl: string;
+  replayUrl?: string;
 }
 
-export enum CarTypes {
+export enum RaceTypes {
   Rally = "Rally",
   RallyCross = "RallyCross"
 }
 
 export interface Car {
-  type: CarTypes;
+  type: RaceTypes;
   id: number;
   carClass: CarClasses;
   name: string;

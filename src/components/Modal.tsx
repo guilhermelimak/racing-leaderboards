@@ -1,8 +1,5 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import styled from "@emotion/styled";
-import Select from "react-select";
-import { Car } from "../types";
-import { cars } from "../dirt2-data/cars";
 
 const Overlay = styled.div`
   position: fixed;
@@ -52,33 +49,24 @@ const ModalTitle = styled.h4`
   margin-bottom: 8px;
 `;
 
+const CloseButton = styled.span`
+  cursor: pointer;
+`;
+
 interface Props {
   title: string;
   onModalClose: () => void;
 }
 
 export const Modal: FC<Props> = ({ title, children, onModalClose }) => {
-  const [selectedCar, setSelectedCar] = useState<Car | null>();
   return (
     <ModalWrapper>
       <ModalBody>
         <ModalHeader>
-          <ModalTitle>{title}</ModalTitle> <span onClick={onModalClose}>X</span>
+          <ModalTitle>{title}</ModalTitle>
+          <CloseButton onClick={onModalClose}>X</CloseButton>
         </ModalHeader>
-        <ModalContent>
-          <label>
-            Cars
-            <Select
-              value={selectedCar}
-              onChange={option => setSelectedCar(option as Car)}
-              getOptionLabel={option =>
-                `${option.name} [${option.type}][${option.carClass}]`
-              }
-              options={cars}
-            />
-          </label>
-          {children}
-        </ModalContent>
+        <ModalContent>{children}</ModalContent>
       </ModalBody>
       <Overlay onClick={onModalClose} />
     </ModalWrapper>

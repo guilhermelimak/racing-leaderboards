@@ -1,6 +1,6 @@
 import firebase from "firebase";
 import "@firebase/firestore";
-import { Track, Entry } from "./types";
+import { Stage, Entry } from "./types";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAEmbQ2is5G7rx1qUtm-XEHuORlCqcpmo8",
@@ -15,29 +15,33 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-export const getTracks = () => {
-  return db
-    .collection("tracks")
-    .get()
-    .then(items => {
-      const tracks: Track[] = [];
-      items.forEach(doc => {
-        tracks.push({ id: doc.id, ...doc.data() } as any);
-      });
-
-      return tracks;
-    });
+const throwErr = (err: any) => {
+  throw new Error(err);
 };
-export const getEntries = () => {
-  return db
-    .collection("entries")
-    .get()
-    .then(items => {
-      const tracks: Entry[] = [];
-      items.forEach(doc => {
-        tracks.push({ id: doc.id, ...doc.data() } as any);
-      });
 
-      return tracks;
-    });
+export const api = {
+  getEntries: () =>
+    db
+      .collection("entries")
+      .get()
+      .then(items => {
+        const entries: Entry[] = [];
+
+        items.forEach(doc => {
+          entries.push({ id: doc.id, ...doc.data() } as any);
+        });
+
+        return entries;
+      }),
+
+  createEntry: (entry: Entry) => db.collection("entries").add(entry),
+
+  uploadImage: (file: File): Promise<string> =>
+    firebase
+      .storage()
+      .ref()
+      .child("screenshots/" + file.name)
+      .put(file, { contentType: file.type })
+      .then(snapshot => snapshot.ref.getDownloadURL())
+      .catch(throwErr)
 };

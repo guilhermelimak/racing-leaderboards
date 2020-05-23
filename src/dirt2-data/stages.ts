@@ -1,6 +1,6 @@
-import { Directions, Locations, Track } from "../types";
+import { Directions, Locations, Stage } from "../types";
 
-export const stages: Track[] = [
+export const stages: Stage[] = [
   {
     location: Locations.Argentina,
     direction: Directions.Forward,
