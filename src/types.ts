@@ -7,7 +7,7 @@ export enum Locations {
   Poland = "Łęczna County, Poland",
   Monaco = "Monte Carlo, Monaco",
   Sweden = "Värmland, Sweden",
-  Baumholder = "Germany, Baumholder",
+  Germany = "Baumholder, Germany",
   Finland = "Jämsä, Finland",
   Greece = "Argolis, Greece",
   Wales = "Powys, Wales",

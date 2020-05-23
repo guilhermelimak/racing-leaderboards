@@ -674,84 +674,84 @@ export const stages: Stage[] = [
     id: 95
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Forward,
     stage: "Oberstein",
     distance: "11.67",
     id: 96
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Forward,
     stage: "Hammerstein",
     distance: "10.81",
     id: 97
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Forward,
     stage: "Kreuzungsring",
     distance: "6.31",
     id: 98
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Forward,
     stage: "Verbundsring",
     distance: "5.85",
     id: 99
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Forward,
     stage: "Innerer Feld-Sprint",
     distance: "5.56",
     id: 100
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Forward,
     stage: "Waldaufstieg",
     distance: "5.39",
     id: 101
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Reverse,
     stage: "Frauenberg",
     distance: "11.67",
     id: 102
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Reverse,
     stage: "Ruschberg",
     distance: "10.70",
     id: 103
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Reverse,
     stage: "Kreuzungsring reverse",
     distance: "6.31",
     id: 104
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Reverse,
     stage: "Verbundsring Reverse",
     distance: "5.85",
     id: 105
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Reverse,
     stage: "Innerer Feld-Sprint (umgekehrt)",
     distance: "5.56",
     id: 106
   },
   {
-    location: Locations.Baumholder,
+    location: Locations.Germany,
     direction: Directions.Reverse,
     stage: "Waldabstieg",
     distance: "5.39",
