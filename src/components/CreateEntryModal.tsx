@@ -5,7 +5,7 @@ import { Car, Stage, RaceTypes, Conditions } from "../types";
 import Select from "react-select";
 import { stages } from "../dirt2-data/stages";
 import { Global, css } from "@emotion/core";
-import { api } from "../service";
+import { api } from "../api";
 import styled from "@emotion/styled";
 import { LabeledInput } from "./UI/LabeledInput";
 import { Button } from "./UI/Button";

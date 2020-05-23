@@ -4,7 +4,7 @@ import { Layout } from "../components/UI/Layout";
 import { Container } from "../components/UI/Container";
 import { LabeledInput } from "../components/UI/LabeledInput";
 import { Button } from "../components/UI/Button";
-import { api } from "../service";
+import { api } from "../api";
 
 const FormContainer = styled.div`
   display: Flex;

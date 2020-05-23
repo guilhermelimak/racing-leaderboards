@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Entry } from "../types";
-import { api } from "../service";
+import { api } from "../api";
 import { LabeledInput } from "../components/UI/LabeledInput";
 import { Button } from "../components/UI/Button";
 import { CreateEntryModal } from "../components/CreateEntryModal";
