@@ -23,7 +23,7 @@ export enum CarClasses {
   RXSupercars2019 = "RX Supercars 2019",
   H1FWD = "H1 (FWD)",
   H2FWD = "H2 (FWD)",
-  H2RWP = "H2 (RWD)",
+  H2RWD = "H2 (RWD)",
   H3RWD = "H3 (RWD)",
   GroupBRWD = "Group B (RWD)",
   GroupB4WD = "Group B (4WD)",
@@ -33,28 +33,8 @@ export enum CarClasses {
   NR4 = "NR4/R4",
   UpTo2000cc = "Up to 2000cc",
   R5 = "R5",
-  RallyGr = "Rally GT"
+  RallyGT = "Rally GT"
 }
-type CarClass =
-  | "H1 (FWD)"
-  | "H2 (FWD)"
-  | "H2 (RWD)"
-  | "H3 (RWD)"
-  | "Group B (RWD)"
-  | "Group B (4WD)"
-  | "R2"
-  | "F2 Kit Car"
-  | "Group A"
-  | "NR4/R4"
-  | "Up to 2000cc"
-  | "R5"
-  | "Rally GT"
-  | "RX Super 1600S"
-  | "Crosskart"
-  | "Group B (Rallycross)"
-  | "RX2"
-  | "RX Supercars"
-  | "RX Supercars 2019";
 
 export enum Directions {
   Forward = "Forward",
@@ -74,7 +54,7 @@ export interface Track {
   direction: Directions;
 }
 
-export interface Record {
+export interface Entry {
   id: number;
   trackId: number;
   player: string;
@@ -88,11 +68,9 @@ export enum CarTypes {
   RallyCross = "RallyCross"
 }
 
-export type CarType = "Rally" | "RallyCross";
-
 export interface Car {
-  type: CarType;
+  type: CarTypes;
   id: number;
-  carClass: CarClass;
+  carClass: CarClasses;
   name: string;
 }

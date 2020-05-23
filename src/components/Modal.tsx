@@ -1,8 +1,8 @@
 import React, { FC, useState } from "react";
 import styled from "@emotion/styled";
 import Select from "react-select";
-import { Car } from "./types";
-import { cars } from "./cars";
+import { Car } from "../types";
+import { cars } from "../dirt2-data/cars";
 
 const Overlay = styled.div`
   position: fixed;

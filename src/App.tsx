@@ -1,15 +1,10 @@
 import React, { FC, useState } from "react";
-import { Collapse } from "./Collapse";
+import { Collapse } from "./components/Collapse";
 import styled from "@emotion/styled";
-import { Record, Directions, Conditions, Track, Locations } from "./types";
-import { stages } from "./stages";
-import { Modal } from "./Modal";
+import { Entry, Directions, Conditions, Track, Locations } from "./types";
+import { stages } from "./dirt2-data/stages";
+import { Modal } from "./components/Modal";
 
-const EntryContainer = styled.div`
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-`;
 const fakeTrack: Track = {
   id: 20,
   location: Locations.Baumholder,
@@ -18,7 +13,7 @@ const fakeTrack: Track = {
   stage: "Germany"
 };
 
-const fakeRecord: Record = {
+const fakeEntry: Entry = {
   id: 30,
   trackId: fakeTrack.id,
   player: "David",
@@ -28,18 +23,42 @@ const fakeRecord: Record = {
 };
 
 interface Props {
-  record: Record;
+  entry: Entry;
 }
 
-const RecordEntry: FC<Props> = ({ record }) => {
+const EntryContainer = styled.div`
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+`;
+
+const LeaderboardEntry: FC<Props> = ({ entry }) => {
   return (
     <EntryContainer>
-      <div>{record.player}</div>
-      <div>{record.time}</div>
-      <div>{record.image}</div>
+      <div>{entry.player}</div>
+      <div>{entry.time}</div>
+      <div>{entry.image}</div>
     </EntryContainer>
   );
 };
+
+const Layout = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 768px;
+`;
 
 function App() {
   const [filter, setFilter] = useState("");
@@ -50,8 +69,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <Layout>
+      <Container>
         <div>
           <label>
             Filter
@@ -82,15 +101,15 @@ function App() {
           )
           .map(t => (
             <Collapse key={t.id} title={`${t.location} - ${t.stage}`}>
-              <RecordEntry record={fakeRecord} />
-              <RecordEntry record={fakeRecord} />
-              <RecordEntry record={fakeRecord} />
-              <RecordEntry record={fakeRecord} />
-              <RecordEntry record={fakeRecord} />
+              <LeaderboardEntry entry={fakeEntry} />
+              <LeaderboardEntry entry={fakeEntry} />
+              <LeaderboardEntry entry={fakeEntry} />
+              <LeaderboardEntry entry={fakeEntry} />
+              <LeaderboardEntry entry={fakeEntry} />
             </Collapse>
           ))}
-      </header>
-    </div>
+      </Container>
+    </Layout>
   );
 }
 export default App;

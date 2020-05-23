@@ -1,4 +1,4 @@
-import { Directions, Locations, Track } from "./types";
+import { Directions, Locations, Track } from "../types";
 
 export const stages: Track[] = [
   {
