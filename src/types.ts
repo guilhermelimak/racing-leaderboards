@@ -2,7 +2,7 @@ export enum Locations {
   Argentina = "Catamarca Province, Argentina",
   Australia = "Monaro, Australia",
   NewZealand = "Hawkes Bay, New Zealand",
-  Spawn = "Ribadelles, Spain",
+  Spain = "Ribadelles, Spain",
   USA = "New England, USA",
   Poland = "Łęczna County, Poland",
   Monaco = "Monte Carlo, Monaco",
@@ -13,6 +13,48 @@ export enum Locations {
   Wales = "Powys, Wales",
   Scotland = "Perth and Kinross, Scotland"
 }
+
+export enum CarClasses {
+  RX1600S = "RX Super 1600S",
+  CrossKart = "Crosskart",
+  GroupBRallyCross = "Group B (Rallycross)",
+  RX2 = "RX2",
+  RXSupercars = "RX Supercars",
+  RXSupercars2019 = "RX Supercars 2019",
+  H1FWD = "H1 (FWD)",
+  H2FWD = "H2 (FWD)",
+  H2RWP = "H2 (RWD)",
+  H3RWD = "H3 (RWD)",
+  GroupBRWD = "Group B (RWD)",
+  GroupB4WD = "Group B (4WD)",
+  R2 = "R2",
+  F2KitCar = "F2 Kit Car",
+  GroupA = "Group A",
+  NR4 = "NR4/R4",
+  UpTo2000cc = "Up to 2000cc",
+  R5 = "R5",
+  RallyGr = "Rally GT"
+}
+type CarClass =
+  | "H1 (FWD)"
+  | "H2 (FWD)"
+  | "H2 (RWD)"
+  | "H3 (RWD)"
+  | "Group B (RWD)"
+  | "Group B (4WD)"
+  | "R2"
+  | "F2 Kit Car"
+  | "Group A"
+  | "NR4/R4"
+  | "Up to 2000cc"
+  | "R5"
+  | "Rally GT"
+  | "RX Super 1600S"
+  | "Crosskart"
+  | "Group B (Rallycross)"
+  | "RX2"
+  | "RX Supercars"
+  | "RX Supercars 2019";
 
 export enum Directions {
   Forward = "Forward",
@@ -25,16 +67,16 @@ export enum Conditions {
 }
 
 export interface Track {
-  id: string;
+  id: number;
   location: Locations;
   stage: string;
-  distance: number;
+  distance: string;
   direction: Directions;
 }
 
 export interface Record {
-  id: string;
-  trackId: string;
+  id: number;
+  trackId: number;
   player: string;
   condition: Conditions;
   time: string;
@@ -46,24 +88,11 @@ export enum CarTypes {
   RallyCross = "RallyCross"
 }
 
-export interface Car {
-  type: CarTypes;
-  class: CarClasses;
-  name: string;
-}
+export type CarType = "Rally" | "RallyCross";
 
-export enum CarClasses {
-  HistoricH1FWD = "Historic Rally H1 (FWD)",
-  HistoricH2FWD = "Historic Rally H2 (FWD)",
-  HistoricH2EWD = "Historic Rally H2 (RWD)",
-  F2Kit = "F2 Kit Car",
-  HistoricH3RWD = "Historic Rally H3 (RWD)",
-  HistoricGroupB4WD = "Historic Rally Group B (4WD)",
-  HistoricGroupBRWD = "Historic Rally Group B (RWD)",
-  ModernGroupA = "Modern Rally Group A",
-  ModernGT = "Modern Rally GT",
-  ModernR2 = "Modern Rally R2",
-  ModernR4 = "Modern Rally NR4/R4",
-  UpTo2000cc4WD = "Up to 2000cc (4WD)",
-  ModernR5 = "Modern Rally R5"
+export interface Car {
+  type: CarType;
+  id: number;
+  carClass: CarClass;
+  name: string;
 }

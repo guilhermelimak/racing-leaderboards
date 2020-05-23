@@ -1,23 +1,25 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Collapse } from "./Collapse";
 import styled from "@emotion/styled";
-import { Record, Directions, Conditions } from "./types";
+import { Record, Directions, Conditions, Track, Locations } from "./types";
+import { stages } from "./stages";
+import { Modal } from "./Modal";
 
 const EntryContainer = styled.div`
   padding: 16px;
   display: flex;
   justify-content: space-between;
 `;
-const fakeTrack = {
-  id: "fake-track-id",
-  location: "oberstein",
+const fakeTrack: Track = {
+  id: 20,
+  location: Locations.Baumholder,
   direction: Directions.Forward,
-  distance: 12.4,
+  distance: "12.4",
   stage: "Germany"
 };
 
 const fakeRecord: Record = {
-  id: "fake-record-id",
+  id: 30,
   trackId: fakeTrack.id,
   player: "David",
   time: "3021",
@@ -40,37 +42,53 @@ const RecordEntry: FC<Props> = ({ record }) => {
 };
 
 function App() {
+  const [filter, setFilter] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const createNew = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <Collapse title="Oberstein">
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-        </Collapse>
-        <Collapse title="Oberstein">
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-        </Collapse>
-        <Collapse title="Oberstein">
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-        </Collapse>
-        <Collapse title="Oberstein">
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-          <RecordEntry record={fakeRecord} />
-        </Collapse>
+        <div>
+          <label>
+            Filter
+            <input
+              type="text"
+              name="filter"
+              value={filter}
+              onChange={evt => setFilter(evt.target.value)}
+            />
+          </label>
+          <button onClick={createNew}>Add new record</button>
+        </div>
+
+        {isModalOpen && (
+          <Modal
+            onModalClose={() => setIsModalOpen(false)}
+            title="Add new entry"
+          >
+            test
+          </Modal>
+        )}
+
+        {stages
+          .filter(
+            s =>
+              s.stage.toLowerCase().includes(filter.toLowerCase()) ||
+              s.location.toLowerCase().includes(filter.toLowerCase())
+          )
+          .map(t => (
+            <Collapse key={t.id} title={`${t.location} - ${t.stage}`}>
+              <RecordEntry record={fakeRecord} />
+              <RecordEntry record={fakeRecord} />
+              <RecordEntry record={fakeRecord} />
+              <RecordEntry record={fakeRecord} />
+              <RecordEntry record={fakeRecord} />
+            </Collapse>
+          ))}
       </header>
     </div>
   );
