@@ -41,10 +41,15 @@ export interface Record {
   image: string;
 }
 
+export enum CarTypes {
+  Rally = "Rally",
+  RallyCross = "RallyCross"
+}
+
 export interface Car {
-  type: "Rally" | "Rally Cross";
-  class: "";
-  name: "";
+  type: CarTypes;
+  class: CarClasses;
+  name: string;
 }
 
 export enum CarClasses {

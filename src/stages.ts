@@ -1,3 +1,39 @@
+// (() => {
+//   let location = "";
+//   let direction = "";
+//   let stage = false;
+//   let distance = "";
+//
+//   console.log(
+//     JSON.stringify(
+//       [...document.querySelectorAll(".wikitable:nth-of-type(2)  td")].reduce(
+//         (acc, val) => {
+//           if (val.rowSpan === 12) {
+//             location = val.innerHTML;
+//             return acc;
+//           }
+//
+//           if (val.rowSpan === 6) {
+//             direction = val.innerHTML;
+//             return acc;
+//           }
+//
+//           if (!stage) {
+//             stage = val.innerHTML;
+//             return acc;
+//           } else {
+//             distance = val.innerHTML;
+//             const result = { location, direction, stage, distance };
+//             stage = false;
+//             return [...acc, result];
+//           }
+//         },
+//         []
+//       )
+//     )
+//   );
+// })();
+
 export const stages = [
   {
     location: "Catamarca Province, Argentina",
