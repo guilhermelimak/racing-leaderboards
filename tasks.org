@@ -2,6 +2,7 @@
  - [ ] Add function to sort times
 
 * Tasks
+ - [ ] Add auth to create and modify entries
  - [ ] Add modal to edit entry
    - [ ] Add delete button
  - [ ] Add top players
