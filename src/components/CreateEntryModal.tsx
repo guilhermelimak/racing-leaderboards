@@ -1,4 +1,5 @@
 import React, { FC, useState, ChangeEvent } from "react";
+import Cleave from "cleave.js/react";
 import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
 import { Car, Stage, RaceTypes, Conditions } from "../types";
@@ -6,7 +7,7 @@ import Select from "react-select";
 import { stages } from "../dirt2-data/stages";
 import { api } from "../api";
 import styled from "@emotion/styled";
-import { LabeledInput } from "./UI/LabeledInput";
+import { LabeledInput, LabeledCleaveInput } from "./UI/LabeledInput";
 import { Button } from "./UI/Button";
 
 interface SelectOption<T> {
@@ -108,7 +109,16 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
           />
         </label>
 
-        <LabeledInput label="Time" value={time} onChange={setTime} />
+        <LabeledCleaveInput
+          label="Time"
+          value={time}
+          onChange={setTime}
+          options={{
+            numericOnly: true,
+            delimiters: [":", "."],
+            blocks: [2, 2, 3]
+          }}
+        />
 
         <LabeledInput label="Player" value={player} onChange={setPlayer} />
 

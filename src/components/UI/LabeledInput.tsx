@@ -1,6 +1,23 @@
 import React, { FC } from "react";
 import styled from "@emotion/styled";
 import { styles } from "../../styles";
+import { Label } from "./Label";
+import Cleave from "cleave.js/react";
+import { CleaveOptions } from "cleave.js/options";
+
+const inputStyles = {
+  display: "block",
+  boxSizing: "border-box",
+  backgroundColor: styles.colors.background30,
+  border: `1px solid ${styles.colors.background20}`,
+  width: "100%",
+  padding: "6px 3px",
+  color: styles.colors.foreground20
+};
+
+const Input = styled.input(inputStyles as any);
+
+const CleaveInput = styled(Cleave)(inputStyles as any);
 
 interface Props {
   label: string;
@@ -9,21 +26,27 @@ interface Props {
   onChange: (value: string) => void;
 }
 
-const Label = styled.label`
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-`;
+interface CleaveProps extends Props {
+  options: CleaveOptions;
+}
 
-const Input = styled.input`
-  display: block;
-  box-sizing: border-box;
-  background-color: ${styles.colors.background30};
-  border: 1px solid ${styles.colors.background20};
-  width: 100%;
-  padding: 6px 3px;
-  color: ${styles.colors.foreground20};
-`;
+export const LabeledCleaveInput: FC<CleaveProps> = ({
+  value,
+  onChange,
+  label,
+  options,
+  type = "text"
+}) => (
+  <Label>
+    {label}
+    <CleaveInput
+      type={type}
+      value={value}
+      options={options}
+      onChange={e => onChange(e.target.value)}
+    />
+  </Label>
+);
 
 export const LabeledInput: FC<Props> = ({
   value,
