@@ -1,0 +1,13 @@
+* Doing
+ - [ ] Add function to sort times
+
+* Tasks
+ - [ ] Add modal to edit entry
+   - [ ] Add delete button
+ - [ ] Add top players
+ - [ ] Add time of day to entry model
+ - [X] Add icons to screenshots and video links
+ - [X] Add formatting to time field
+
+
+ - [ ] Improve button styles
