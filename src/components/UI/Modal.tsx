@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "@emotion/styled";
+import { styles } from "../../styles";
 
 const Overlay = styled.div`
   position: fixed;
@@ -27,8 +28,7 @@ const ModalWrapper = styled.div`
 
 const ModalBody = styled.div`
   z-index: 1;
-  background-color: #fff;
-  min-width: 600px;
+  background-color: ${styles.colors.background10};
   padding: 16px;
   border-radius: 3px;
   box-shadow: 0px 5px 5px 0 #00000080;

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "@emotion/styled";
+import { styles } from "../../styles";
 
 interface Props {
   label: string;
@@ -10,9 +11,15 @@ interface Props {
 
 const Label = styled.label`
   display: block;
+  font-weight: bold;
 `;
+
 const Input = styled.input`
   display: block;
+  background-color: ${styles.colors.background30};
+  border: 1px solid ${styles.colors.background20};
+  padding: 6px 3px;
+  color: ${styles.colors.foreground20};
 `;
 
 export const LabeledInput: FC<Props> = ({

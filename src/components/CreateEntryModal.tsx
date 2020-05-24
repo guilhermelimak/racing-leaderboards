@@ -43,13 +43,13 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
 
   const [screenshot, setScreenshot] = useState("");
 
-  const createEntry = () => {
+  const createEntry = async () => {
     if (!car || !stage || !time || !raceType || !player) {
       alert("Wrong info. fix this shit");
       return;
     }
 
-    return api.createEntry({
+    await api.createEntry({
       carId: car.id,
       stageId: stage.id,
       condition: Conditions.Dry,
@@ -58,6 +58,8 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
       replayUrl: replay,
       imageUrl: screenshot
     });
+
+    onModalClose();
   };
 
   const handleFileChosen = async (event: ChangeEvent<HTMLInputElement>) => {

@@ -10,6 +10,12 @@ export const CountryFlag = styled.img`
   margin-left: 12px;
 `;
 
+export const LocationName = styled.span`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 interface Props {
   stage: Stage;
 }
@@ -21,7 +27,7 @@ export const StageCollapse: FC<Props> = ({ stage, children }) => (
         <Flex justifyContent="space-between">
           <span>{stage.stage}</span>
           <div>
-            <span>{stage.location}</span>
+            <LocationName>{stage.location}</LocationName>
             <CountryFlag
               src={api.getCountryFlagUrl(stage.location.split(", ")[1])}
               alt="Country flag"

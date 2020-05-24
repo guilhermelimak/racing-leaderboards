@@ -40,6 +40,7 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
           onClick={() => setModalOpen(true)}
         />
       </EntryContainer>
+
       {modalOpen && (
         <Modal
           title={`${entry.player} ${entry.time}`}

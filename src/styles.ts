@@ -13,9 +13,9 @@ export const styles = {
     background20: lighten(0.2, baseColors.background),
     background30: lighten(0.3, baseColors.background),
     foreground: baseColors.foreground,
-    foreground10: darken(0.1, baseColors.foreground),
-    foreground20: darken(0.2, baseColors.foreground),
-    foreground30: darken(0.3, baseColors.foreground),
+    foreground10: lighten(0.1, baseColors.foreground),
+    foreground20: lighten(0.2, baseColors.foreground),
+    foreground30: lighten(0.3, baseColors.foreground),
     gray: baseColors.gray,
     highlight: ""
   }
