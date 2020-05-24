@@ -47,5 +47,8 @@ export const api = {
       .child("screenshots/" + file.name)
       .put(file, { contentType: file.type })
       .then(snapshot => snapshot.ref.getDownloadURL())
-      .catch(throwErr)
+      .catch(throwErr),
+
+  getCountryFlagUrl: (country: string) =>
+    `https://cdn.countryflags.com/thumbs/${country.toLowerCase()}/flag-800.png`
 };

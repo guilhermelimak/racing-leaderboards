@@ -6,7 +6,10 @@ interface Props {
   disabled?: boolean;
 }
 
-const BaseButton = styled.button``;
+const BaseButton = styled.button`
+  border: none;
+  outline: none;
+`;
 
 export const Button: FC<Props> = ({ onClick, children, disabled }) => (
   <BaseButton disabled={disabled} onClick={onClick}>

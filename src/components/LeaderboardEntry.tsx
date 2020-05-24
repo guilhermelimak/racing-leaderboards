@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Entry } from "../types";
 import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
+import { styles } from "../styles";
 
 interface Props {
   entry: Entry;
@@ -13,7 +14,7 @@ const EntryContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid ${styles.colors.background};
 
   &:last-child {
     border-bottom: 0;

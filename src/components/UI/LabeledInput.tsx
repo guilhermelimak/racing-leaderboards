@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styled from "@emotion/styled";
 
 interface Props {
   label: string;
@@ -7,14 +8,21 @@ interface Props {
   onChange: (value: string) => void;
 }
 
+const Label = styled.label`
+  display: block;
+`;
+const Input = styled.input`
+  display: block;
+`;
+
 export const LabeledInput: FC<Props> = ({
   value,
   onChange,
   label,
   type = "text"
 }) => (
-  <label>
+  <Label>
     {label}
-    <input type={type} value={value} onChange={e => onChange(e.target.value)} />
-  </label>
+    <Input type={type} value={value} onChange={e => onChange(e.target.value)} />
+  </Label>
 );
