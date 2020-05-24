@@ -70,6 +70,7 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
 
     const [file] = event.target.files;
     setScreenshot(await api.uploadImage(file));
+    alert("Image uploaded successfully");
   };
 
   return (
