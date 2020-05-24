@@ -4,9 +4,9 @@ import { Entry } from "../types";
 import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
 import { styles } from "../styles";
-import cameraIcon from "../images/camera.svg";
-import videoIcon from "../images/film.svg";
 import { Flex } from "./UI/Flex";
+import { VideoIcon } from "../images/VideoIcon";
+import { CameraIcon } from "../images/CameraIcon";
 
 interface Props {
   entry: Entry;
@@ -26,13 +26,8 @@ const EntryContainer = styled.div`
 `;
 
 const IconLink = styled.a`
-  height: 24px;
-`;
-
-const Icon = styled.img`
-  height: 24px;
   cursor: pointer;
-  fill: ${styles.colors.background10};
+  height: 24px;
 `;
 
 const ModalImage = styled.img`
@@ -52,12 +47,14 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
         <div>{cars.find(c => c.id === entry.carId)!.name}</div>
         <Flex justifyContent="center" alignItems="center">
           {entry.replayUrl && (
-            <IconLink href={entry.replayUrl}>
-              <Icon src={videoIcon} />
+            <IconLink href={entry.replayUrl} target="_blank">
+              <VideoIcon />
             </IconLink>
           )}
         </Flex>
-        <Icon src={cameraIcon} onClick={() => setModalOpen(true)} />
+        <IconLink onClick={() => setModalOpen(true)}>
+          <CameraIcon />
+        </IconLink>
       </EntryContainer>
       {modalOpen && (
         <Modal
