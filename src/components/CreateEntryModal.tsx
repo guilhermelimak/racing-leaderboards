@@ -9,6 +9,7 @@ import { api } from "../api";
 import styled from "@emotion/styled";
 import { LabeledInput, LabeledCleaveInput } from "./UI/LabeledInput";
 import { Button } from "./UI/Button";
+import { Label } from "./UI/Label";
 
 interface SelectOption<T> {
   value: T;
@@ -76,7 +77,7 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
   return (
     <Modal title="Create entry" onModalClose={() => onModalClose()}>
       <FormContainer>
-        <label>
+        <Label>
           Race type
           <Select
             value={raceType}
@@ -87,9 +88,9 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
             }}
             options={raceTypes}
           />
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           Cars
           <Select
             value={car}
@@ -97,9 +98,9 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
             getOptionLabel={option => `${option.name} [${option.carClass}]`}
             options={cars.filter(c => c.type === raceType.value)}
           />
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           Stages
           <Select
             value={stage}
@@ -107,7 +108,7 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
             getOptionLabel={option => `${option.stage} [${option.location}]`}
             options={stages}
           />
-        </label>
+        </Label>
 
         <LabeledCleaveInput
           label="Time"
@@ -124,15 +125,16 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
 
         <LabeledInput label="Replay" value={replay} onChange={setReplay} />
 
-        <label>
+        <Label>
           Screenshot
           <input
+            style={{ display: "block", boxSizing: "border-box" }}
             accept="image/*"
             type="file"
             name="screenshot"
             onChange={handleFileChosen}
           />
-        </label>
+        </Label>
       </FormContainer>
       <Button onClick={() => createEntry()}>submit</Button>
     </Modal>

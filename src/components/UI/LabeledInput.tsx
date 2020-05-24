@@ -17,8 +17,6 @@ const inputStyles = {
 
 const Input = styled.input(inputStyles as any);
 
-const CleaveInput = styled(Cleave)(inputStyles as any);
-
 interface Props {
   label: string;
   type?: string;
@@ -26,9 +24,23 @@ interface Props {
   onChange: (value: string) => void;
 }
 
+export const LabeledInput: FC<Props> = ({
+  value,
+  onChange,
+  label,
+  type = "text"
+}) => (
+  <Label>
+    {label}
+    <Input type={type} value={value} onChange={e => onChange(e.target.value)} />
+  </Label>
+);
+
 interface CleaveProps extends Props {
   options: CleaveOptions;
 }
+
+const CleaveInput = styled(Cleave)(inputStyles as any);
 
 export const LabeledCleaveInput: FC<CleaveProps> = ({
   value,
@@ -45,17 +57,5 @@ export const LabeledCleaveInput: FC<CleaveProps> = ({
       options={options}
       onChange={e => onChange(e.target.value)}
     />
-  </Label>
-);
-
-export const LabeledInput: FC<Props> = ({
-  value,
-  onChange,
-  label,
-  type = "text"
-}) => (
-  <Label>
-    {label}
-    <Input type={type} value={value} onChange={e => onChange(e.target.value)} />
   </Label>
 );
