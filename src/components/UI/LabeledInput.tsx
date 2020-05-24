@@ -11,13 +11,16 @@ interface Props {
 
 const Label = styled.label`
   display: block;
+  margin-bottom: 8px;
   font-weight: bold;
 `;
 
 const Input = styled.input`
   display: block;
+  box-sizing: border-box;
   background-color: ${styles.colors.background30};
   border: 1px solid ${styles.colors.background20};
+  width: 100%;
   padding: 6px 3px;
   color: ${styles.colors.foreground20};
 `;
