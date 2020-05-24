@@ -9,6 +9,7 @@ interface Props {
 const BaseButton = styled.button`
   border: none;
   outline: none;
+  cursor: pointer;
 `;
 
 export const Button: FC<Props> = ({ onClick, children, disabled }) => (

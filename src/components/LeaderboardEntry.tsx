@@ -10,9 +10,10 @@ interface Props {
 }
 
 const EntryContainer = styled.div`
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 2fr 1fr;
+  justify-items: center;
   align-items: center;
   border-bottom: 1px solid ${styles.colors.background};
 
@@ -22,8 +23,13 @@ const EntryContainer = styled.div`
 `;
 
 const EntryScreenshot = styled.img`
-  width: 40px;
+  height: 30px;
   cursor: pointer;
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 export const LeaderboardEntry: FC<Props> = ({ entry }) => {
@@ -46,7 +52,7 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
           title={`${entry.player} ${entry.time}`}
           onModalClose={() => setModalOpen(false)}
         >
-          <img src={entry.imageUrl} alt="" />
+          <ModalImage src={entry.imageUrl} />
         </Modal>
       )}
     </>

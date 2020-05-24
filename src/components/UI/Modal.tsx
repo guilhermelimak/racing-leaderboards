@@ -32,6 +32,8 @@ const ModalBody = styled.div`
   padding: 16px;
   border-radius: 3px;
   box-shadow: 0px 5px 5px 0 #00000080;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 const ModalContent = styled.div`
