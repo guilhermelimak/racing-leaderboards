@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import styled from "@emotion/styled";
 import { styles } from "../../styles";
+import { Global, css } from "@emotion/core";
 
 const Overlay = styled.div`
   position: fixed;
@@ -74,6 +75,13 @@ export const Modal: FC<Props> = ({ title, children, onModalClose }) => {
 
   return (
     <ModalWrapper>
+      <Global
+        styles={css`
+          body {
+            overflow: hidden;
+          }
+        `}
+      />
       <ModalBody>
         <ModalHeader>
           <ModalTitle>{title}</ModalTitle>

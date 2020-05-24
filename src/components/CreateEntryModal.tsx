@@ -4,7 +4,6 @@ import { cars } from "../dirt2-data/cars";
 import { Car, Stage, RaceTypes, Conditions } from "../types";
 import Select from "react-select";
 import { stages } from "../dirt2-data/stages";
-import { Global, css } from "@emotion/core";
 import { api } from "../api";
 import styled from "@emotion/styled";
 import { LabeledInput } from "./UI/LabeledInput";
@@ -75,17 +74,6 @@ export const CreateEntryModal: FC<Props> = ({ onModalClose }) => {
 
   return (
     <Modal title="Create entry" onModalClose={() => onModalClose()}>
-      <Global
-        styles={css`
-          body {
-            overflow: hidden;
-          }
-          input {
-            width: 100%;
-            margin-bottom: 8px;
-          }
-        `}
-      />
       <FormContainer>
         <label>
           Race type
