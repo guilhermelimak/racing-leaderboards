@@ -7,8 +7,13 @@
    - [ ] Add delete button
  - [ ] Add top players
  - [ ] Add time of day to entry model
+ - [ ] Improve screenshot selection
+   - [ ] Add a better way to delete the current image
+   - [ ] Add a preview to the selected image
+   - [ ] Add a way to paste the image
+   - [ ] Add drag and drop to the image
+ - [ ] Improve button styles
+  
+* Done
  - [X] Add icons to screenshots and video links
  - [X] Add formatting to time field
-
-
- - [ ] Improve button styles
