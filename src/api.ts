@@ -21,21 +21,28 @@ const throwErr = (err: any) => {
 };
 
 export const api = {
-  getEntries: () =>
+  getEntries: (entriesChanged: (entries: Entry[]) => void) =>
     db
       .collection("entries")
-      .get()
-      .then(items => {
-        const entries: Entry[] = [];
-
-        items.forEach(doc => {
-          entries.push({ id: doc.id, ...doc.data() } as any);
-        });
-
-        return entries;
-      }),
+      .onSnapshot(snapshot =>
+        entriesChanged(
+          snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Entry))
+        )
+      ),
 
   createEntry: (entry: Entry) => db.collection("entries").add(entry),
+
+  updateEntry: (entry: Entry) =>
+    db
+      .collection("entries")
+      .doc(entry.id)
+      .update(entry),
+
+  deleteEntry: (entry: Entry) =>
+    db
+      .collection("entries")
+      .doc(entry.id)
+      .delete(),
 
   login: ({ email, password }: { email: string; password: string }) =>
     firebase.auth().signInWithEmailAndPassword(email, password),

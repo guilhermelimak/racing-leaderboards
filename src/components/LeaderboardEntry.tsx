@@ -7,6 +7,7 @@ import { styles } from "../styles";
 import { Flex } from "./UI/Flex";
 import { VideoIcon } from "../images/VideoIcon";
 import { CameraIcon } from "../images/CameraIcon";
+import { EntryModal } from "./EntryModal";
 
 interface Props {
   entry: Entry;
@@ -15,6 +16,7 @@ interface Props {
 const EntryContainer = styled.div`
   padding: 10px;
   display: grid;
+  cursor: pointer;
   grid-template-columns: repeat(3, 1fr) 2fr 0.3fr 0.3fr;
   justify-items: center;
   align-items: center;
@@ -36,33 +38,52 @@ const ModalImage = styled.img`
 `;
 
 export const LeaderboardEntry: FC<Props> = ({ entry }) => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [imageModalOpen, setImageModalOpen] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
 
   return (
     <>
-      <EntryContainer>
+      <EntryContainer onClick={() => setEditModalOpen(true)}>
         <div>{entry.player}</div>
+
         <strong>{entry.time}</strong>
+
         <div>{entry.condition}</div>
+
         <div>{cars.find(c => c.id === entry.carId)!.name}</div>
+
         <Flex justifyContent="center" alignItems="center">
           {entry.replayUrl && (
-            <IconLink href={entry.replayUrl} target="_blank">
+            <IconLink
+              onClick={e => e.stopPropagation()}
+              href={entry.replayUrl}
+              target="_blank"
+            >
               <VideoIcon />
             </IconLink>
           )}
         </Flex>
-        <IconLink onClick={() => setModalOpen(true)}>
+
+        <IconLink onClick={e => (e.stopPropagation(), setImageModalOpen(true))}>
           <CameraIcon />
         </IconLink>
       </EntryContainer>
-      {modalOpen && (
+
+      {imageModalOpen && (
         <Modal
           title={`${entry.player} ${entry.time}`}
-          onModalClose={() => setModalOpen(false)}
+          onModalClose={() => setImageModalOpen(false)}
         >
           <ModalImage src={entry.imageUrl} />
         </Modal>
+      )}
+
+      {editModalOpen && (
+        <EntryModal
+          isEditing={true}
+          entry={entry}
+          onModalClose={() => setEditModalOpen(false)}
+        />
       )}
     </>
   );
