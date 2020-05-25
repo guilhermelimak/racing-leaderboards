@@ -2,7 +2,7 @@ import React, { FC, useState, ChangeEvent, useEffect } from "react";
 import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
 import { Car, Stage, RaceTypes, Conditions, Entry } from "../types";
-import Select from "react-select";
+import { Select } from "./UI/Select";
 import { stages } from "../dirt2-data/stages";
 import { api } from "../api";
 import styled from "@emotion/styled";
@@ -114,8 +114,8 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
           Race type
           <Select
             value={raceType}
-            onChange={option => {
-              setRaceType(option as SelectOption<RaceTypes>);
+            onChange={(option: SelectOption<RaceTypes>) => {
+              setRaceType(option);
               setCar(undefined);
               setStage(undefined);
             }}
@@ -127,8 +127,10 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
           Cars
           <Select
             value={car}
-            onChange={option => setCar(option as Car)}
-            getOptionLabel={option => `${option.name} [${option.carClass}]`}
+            onChange={(option: Car) => setCar(option)}
+            getOptionLabel={(option: Car) =>
+              `${option.name} [${option.carClass}]`
+            }
             options={cars.filter(c => c.type === raceType.value)}
           />
         </Label>
@@ -137,8 +139,10 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
           Stages
           <Select
             value={stage}
-            onChange={option => setStage(option as Stage)}
-            getOptionLabel={option => `${option.stage} [${option.location}]`}
+            onChange={(option: Stage) => setStage(option)}
+            getOptionLabel={(option: Stage) =>
+              `${option.stage} [${option.location}]`
+            }
             options={stages}
           />
         </Label>
@@ -171,15 +175,19 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
       </FormContainer>
 
       <Flex justifyContent="space-between">
-        {isEditing && (
-          <Button kind={ButtonKind.Danger} onClick={() => deleteEntry()}>
-            Delete
-          </Button>
-        )}
+        <div>
+          {isEditing && (
+            <Button kind={ButtonKind.Danger} onClick={() => deleteEntry()}>
+              Delete
+            </Button>
+          )}
+        </div>
 
-        <Button onClick={() => createEntry()}>
-          {isEditing ? "Update" : "Create"}
-        </Button>
+        <div>
+          <Button onClick={() => createEntry()}>
+            {isEditing ? "Update" : "Create"}
+          </Button>
+        </div>
       </Flex>
     </Modal>
   );

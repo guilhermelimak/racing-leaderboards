@@ -21,16 +21,18 @@ interface Props {
   label: string;
   type?: string;
   value: string;
+  marginLess?: boolean;
   onChange: (value: string) => void;
 }
 
 export const LabeledInput: FC<Props> = ({
   value,
+  marginLess,
   onChange,
   label,
   type = "text"
 }) => (
-  <Label>
+  <Label marginLess={marginLess}>
     {label}
     <Input type={type} value={value} onChange={e => onChange(e.target.value)} />
   </Label>

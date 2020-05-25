@@ -16,6 +16,7 @@ const Header = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 16px;
 `;
 
@@ -37,7 +38,12 @@ export const Leaderboards = () => {
     <Layout>
       <Container>
         <Header>
-          <LabeledInput label="Filter" value={filter} onChange={setFilter} />
+          <LabeledInput
+            label="Filter"
+            marginLess={true}
+            value={filter}
+            onChange={setFilter}
+          />
 
           <Button onClick={createNew}>Add new record</Button>
         </Header>

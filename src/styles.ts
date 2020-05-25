@@ -1,4 +1,4 @@
-import { darken, lighten } from "polished";
+import { lighten } from "polished";
 
 const baseColors = {
   background: "#222",
@@ -17,6 +17,8 @@ export const styles = {
     foreground20: lighten(0.2, baseColors.foreground),
     foreground30: lighten(0.3, baseColors.foreground),
     gray: baseColors.gray,
+    white: "#fefefe",
+    danger: "#e63946",
     highlight: ""
   }
 };

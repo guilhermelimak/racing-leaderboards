@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-export const Label = styled.label`
+export const Label = styled.label<{ marginLess?: boolean }>`
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: ${props => (props.marginLess ? "0" : "8px")};
   font-weight: bold;
 `;
