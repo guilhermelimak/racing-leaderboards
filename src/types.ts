@@ -55,7 +55,7 @@ export interface Stage {
 }
 
 export interface Entry {
-  id?: number;
+  id?: string;
   stageId: number;
   carId: number;
   player: string;
@@ -63,6 +63,7 @@ export interface Entry {
   time: string;
   imageUrl: string;
   replayUrl?: string;
+  raceType: RaceTypes;
 }
 
 export enum RaceTypes {
