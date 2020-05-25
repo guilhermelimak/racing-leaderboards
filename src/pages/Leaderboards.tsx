@@ -29,9 +29,8 @@ export const Leaderboards = () => {
   };
 
   useEffect(() => {
-    (async () => {
-      setEntries(await api.getEntries());
-    })();
+    const unsubscribe = api.getEntries(setEntries);
+    return () => unsubscribe();
   }, []);
 
   return (
