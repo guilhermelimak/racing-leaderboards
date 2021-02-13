@@ -58,16 +58,17 @@ export const Leaderboards = () => {
         {entries.length
           ? stages
               .filter(
-                s =>
+                (s) =>
                   s.stage.toLowerCase().includes(filter.toLowerCase()) ||
                   s.location.toLowerCase().includes(filter.toLowerCase())
               )
-              .filter(s => !!entries.filter(e => e.stageId === s.id).length)
-              .map(stage => (
+              .filter((s) => !!entries.filter((e) => e.stageId === s.id).length)
+              .map((stage) => (
                 <StageCollapse key={`stage-${stage.id}`} stage={stage}>
                   {entries
-                    .filter(e => e.stageId === stage.id)
-                    .map(entry => (
+                    .filter((e) => e.stageId === stage.id)
+                    .sort(sortByTime)
+                    .map((entry) => (
                       <LeaderboardEntry key={entry.id} entry={entry} />
                     ))}
                 </StageCollapse>
@@ -75,5 +76,12 @@ export const Leaderboards = () => {
           : "Loading entries..."}
       </Container>
     </Layout>
+  );
+};
+
+const sortByTime = (a: Entry, b: Entry) => {
+  return (
+    +a.time.replace(":", "").replace(".", "") -
+    +b.time.replace(":", "").replace(".", "")
   );
 };
