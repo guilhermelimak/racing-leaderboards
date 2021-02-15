@@ -15,10 +15,6 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const login = async () => {
-    await api.login({ email, password });
-  };
-
   return (
     <Layout>
       <Container>
@@ -29,7 +25,15 @@ export const Login = () => {
             value={password}
             onChange={setPassword}
           />
-          <Button onClick={() => login()}>Login</Button>
+          <Button
+            css={{ marginBottom: "2px" }}
+            onClick={() => api.login({ email, password })}
+          >
+            Login
+          </Button>
+          <Button onClick={() => api.register({ email, password })}>
+            Register
+          </Button>
         </FormContainer>
       </Container>
     </Layout>

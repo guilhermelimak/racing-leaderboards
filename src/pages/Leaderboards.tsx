@@ -11,6 +11,8 @@ import { stages } from "../dirt2-data/stages";
 import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
 import { Container } from "../components/UI/Container";
+import { auth } from "firebase";
+import firebase from "firebase";
 
 const Header = styled.div`
   width: 100%;
@@ -34,10 +36,13 @@ export const Leaderboards = () => {
     return () => unsubscribe();
   }, []);
 
+  const user = firebase.auth().currentUser;
+
   return (
     <Layout>
       <Container>
         <Header>
+          {user?.email}
           <LabeledInput
             label="Filter"
             marginLess={true}

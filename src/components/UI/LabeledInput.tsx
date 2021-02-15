@@ -12,7 +12,7 @@ const inputStyles = {
   border: `1px solid ${styles.colors.background20}`,
   width: "100%",
   padding: "6px 3px",
-  color: styles.colors.foreground20
+  color: styles.colors.foreground20,
 };
 
 const Input = styled.input(inputStyles as any);
@@ -23,18 +23,25 @@ interface Props {
   value: string;
   marginLess?: boolean;
   onChange: (value: string) => void;
+  disabled?: boolean;
 }
 
 export const LabeledInput: FC<Props> = ({
   value,
   marginLess,
   onChange,
+  disabled,
   label,
-  type = "text"
+  type = "text",
 }) => (
   <Label marginLess={marginLess}>
     {label}
-    <Input type={type} value={value} onChange={e => onChange(e.target.value)} />
+    <Input
+      disabled={disabled}
+      type={type}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    />
   </Label>
 );
 
@@ -49,7 +56,7 @@ export const LabeledCleaveInput: FC<CleaveProps> = ({
   onChange,
   label,
   options,
-  type = "text"
+  type = "text",
 }) => (
   <Label>
     {label}
@@ -57,7 +64,7 @@ export const LabeledCleaveInput: FC<CleaveProps> = ({
       type={type}
       value={value}
       options={options}
-      onChange={e => onChange(e.target.value)}
+      onChange={(e) => onChange(e.target.value)}
     />
   </Label>
 );
