@@ -7,7 +7,7 @@ import { stages } from "../dirt2-data/stages";
 import { api } from "../api";
 import styled from "@emotion/styled";
 import { LabeledInput, LabeledCleaveInput } from "./UI/LabeledInput";
-import { Button, ButtonKind } from "./UI/Button";
+import { Button } from "theme-ui";
 import { Label } from "./UI/Label";
 import { Flex } from "theme-ui";
 import firebase from "firebase";
@@ -189,7 +189,7 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
       <Flex sx={{ justifyContent: "space-between" }}>
         <div>
           {isEditing && (
-            <Button kind={ButtonKind.Danger} onClick={() => deleteEntry()}>
+            <Button variant="error" onClick={() => deleteEntry()}>
               Delete
             </Button>
           )}

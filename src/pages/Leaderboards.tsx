@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Entry } from "../types";
 import { api } from "../api";
 import { LabeledInput } from "../components/UI/LabeledInput";
-import { Button } from "../components/UI/Button";
+import { Button } from "theme-ui";
 import { EntryModal } from "../components/EntryModal";
 import { StageCollapse } from "../components/StageCollapse";
 import { LeaderboardEntry } from "../components/LeaderboardEntry";

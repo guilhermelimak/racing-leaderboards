@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
 import { Container } from "theme-ui";
 import { LabeledInput } from "../components/UI/LabeledInput";
-import { Button } from "../components/UI/Button";
+import { Button } from "theme-ui";
 import { api } from "../api";
 import toast from "react-hot-toast";
 
