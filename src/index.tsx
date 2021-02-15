@@ -5,6 +5,8 @@ import * as serviceWorker from "./serviceWorker";
 import { Global, css } from "@emotion/core";
 import { styles } from "./styles";
 import { Toaster } from "react-hot-toast";
+import { theme } from "./theme";
+import { ThemeProvider } from "theme-ui";
 
 ReactDOM.render(
   <>
@@ -22,7 +24,9 @@ ReactDOM.render(
       `}
     />
     <Toaster />
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </>,
   document.getElementById("root")
 );
