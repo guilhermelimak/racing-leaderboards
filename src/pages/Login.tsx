@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
-import { Container } from "../components/UI/Container";
+import { Container } from "theme-ui";
 import { LabeledInput } from "../components/UI/LabeledInput";
 import { Button } from "../components/UI/Button";
 import { api } from "../api";

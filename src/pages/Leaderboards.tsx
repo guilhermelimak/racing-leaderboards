@@ -10,7 +10,7 @@ import { LeaderboardEntry } from "../components/LeaderboardEntry";
 import { stages } from "../dirt2-data/stages";
 import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
-import { Container } from "../components/UI/Container";
+import { Container } from "theme-ui";
 import firebase from "firebase";
 
 const Header = styled.div`
