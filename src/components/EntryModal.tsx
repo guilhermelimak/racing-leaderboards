@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 import { LabeledInput, LabeledCleaveInput } from "./UI/LabeledInput";
 import { Button, ButtonKind } from "./UI/Button";
 import { Label } from "./UI/Label";
-import { Flex } from "./UI/Flex";
+import { Flex } from "theme-ui";
 import firebase from "firebase";
 
 interface SelectOption<T> {
@@ -186,7 +186,7 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
         </Label>
       </FormContainer>
 
-      <Flex justifyContent="space-between">
+      <Flex sx={{ justifyContent: "space-between" }}>
         <div>
           {isEditing && (
             <Button kind={ButtonKind.Danger} onClick={() => deleteEntry()}>

@@ -3,7 +3,7 @@ import { Collapse } from "./UI/Collapse";
 import { Stage } from "../types";
 import styled from "@emotion/styled";
 import { api } from "../api";
-import { Flex } from "./UI/Flex";
+import { Flex } from "theme-ui";
 
 export const CountryFlag = styled.img`
   width: 20px;
@@ -24,7 +24,7 @@ export const StageCollapse: FC<Props> = ({ stage, children }) => (
   <Collapse
     title={
       <>
-        <Flex justifyContent="space-between">
+        <Flex sx={{ justifyContent: "space-between" }}>
           <span>{stage.stage}</span>
           <div>
             <LocationName>{stage.location}</LocationName>

@@ -4,7 +4,7 @@ import { Entry } from "../types";
 import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
 import { styles } from "../styles";
-import { Flex } from "./UI/Flex";
+import { Flex } from "theme-ui";
 import { VideoIcon } from "../images/VideoIcon";
 import { CameraIcon } from "../images/CameraIcon";
 import { EntryModal } from "./EntryModal";
@@ -52,7 +52,7 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
 
         <div>{cars.find((c) => c.id === entry.carId)!.name}</div>
 
-        <Flex justifyContent="center" alignItems="center">
+        <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
           {entry.replayUrl && (
             <IconLink
               onClick={(e) => e.stopPropagation()}
