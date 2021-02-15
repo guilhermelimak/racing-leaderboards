@@ -11,7 +11,6 @@ import { stages } from "../dirt2-data/stages";
 import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
 import { Container } from "../components/UI/Container";
-import { auth } from "firebase";
 import firebase from "firebase";
 
 const Header = styled.div`

@@ -5,7 +5,7 @@ import { Container } from "../components/UI/Container";
 import { LabeledInput } from "../components/UI/LabeledInput";
 import { Button } from "../components/UI/Button";
 import { api } from "../api";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const FormContainer = styled.div`
   display: Flex;

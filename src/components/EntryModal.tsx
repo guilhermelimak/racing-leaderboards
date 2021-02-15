@@ -36,7 +36,7 @@ interface Props {
 }
 
 export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
-  const [form, setForm] = useState<Entry>();
+  const [, setForm] = useState<Entry>();
 
   const [car, setCar] = useState<Car>();
   const [stage, setStage] = useState<Stage>();

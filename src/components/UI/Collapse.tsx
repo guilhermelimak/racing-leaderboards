@@ -4,7 +4,7 @@ import { styles } from "../../styles";
 
 const CollapseContent = styled.div<{ isOpen: boolean }>`
   width: 100%;
-  height: ${props => (props.isOpen ? "auto" : 0)};
+  height: ${(props) => (props.isOpen ? "auto" : 0)};
   background-color: ${styles.colors.background};
   overflow: hidden;
 `;
@@ -24,8 +24,8 @@ const CollapseTitle = styled.div<{ isOpen: boolean }>`
   cursor: pointer;
   padding: 16px;
   color: ${styles.colors.foreground};
-  border-bottom: ${props =>
-    props.isOpen ? "1px solid ${styles.colors.background20}" : "none"};
+  border-bottom: ${(props) =>
+    props.isOpen ? `1px solid ${styles.colors.background20}` : "none"};
 `;
 
 interface Props {

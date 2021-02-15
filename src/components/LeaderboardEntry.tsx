@@ -8,7 +8,6 @@ import { Flex } from "./UI/Flex";
 import { VideoIcon } from "../images/VideoIcon";
 import { CameraIcon } from "../images/CameraIcon";
 import { EntryModal } from "./EntryModal";
-import firebase from "firebase";
 
 interface Props {
   entry: Entry;
@@ -42,8 +41,6 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
-  const user = firebase.auth().currentUser;
-
   return (
     <>
       <EntryContainer onClick={() => setEditModalOpen(true)}>
@@ -69,7 +66,10 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
 
         {entry.imageUrl ? (
           <IconLink
-            onClick={(e) => (e.stopPropagation(), setImageModalOpen(true))}
+            onClick={(e) => {
+              e.stopPropagation();
+              setImageModalOpen(true);
+            }}
           >
             <CameraIcon />
           </IconLink>
