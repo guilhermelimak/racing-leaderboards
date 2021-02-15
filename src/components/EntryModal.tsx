@@ -10,6 +10,7 @@ import { LabeledInput, LabeledCleaveInput } from "./UI/LabeledInput";
 import { Button, ButtonKind } from "./UI/Button";
 import { Label } from "./UI/Label";
 import { Flex } from "./UI/Flex";
+import firebase from "firebase";
 
 interface SelectOption<T> {
   value: T;
@@ -18,7 +19,7 @@ interface SelectOption<T> {
 
 const option = <T extends string>(type: T): SelectOption<T> => ({
   value: type,
-  label: type
+  label: type,
 });
 
 const raceTypes = [option(RaceTypes.Rally), option(RaceTypes.RallyCross)];
@@ -35,29 +36,35 @@ interface Props {
 }
 
 export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
+  const [form, setForm] = useState<Entry>();
+
   const [car, setCar] = useState<Car>();
   const [stage, setStage] = useState<Stage>();
   const [time, setTime] = useState("");
-  const [player, setPlayer] = useState("");
-  const [replay, setReplay] = useState("");
+  const [replayUrl, setReplay] = useState("");
   const [screenshot, setScreenshot] = useState("");
   const [raceType, setRaceType] = useState<SelectOption<RaceTypes>>(
     option(RaceTypes.Rally)
   );
 
+  const player = firebase.auth().currentUser?.email ?? "";
+
   useEffect(() => {
     if (isEditing && entry) {
-      setCar(cars.find(c => c.id === entry.carId));
-      setStage(stages.find(s => s.id === entry.stageId));
+      setForm({
+        ...entry,
+      });
+      setCar(cars.find((c) => c.id === entry.carId));
+      setStage(stages.find((s) => s.id === entry.stageId));
       setTime(entry.time);
       setReplay(entry.replayUrl || "");
-      setPlayer(entry.player);
       setRaceType(option(entry.raceType || RaceTypes.Rally));
       setScreenshot(entry.imageUrl);
     }
   }, [entry, isEditing]);
 
   const createEntry = async () => {
+    console.log(car, stage, time, raceType, player, screenshot);
     if (!car || !stage || !time || !raceType || !player || !screenshot) {
       alert("Wrong info. fix this shit");
       return;
@@ -71,8 +78,8 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
       raceType: raceType.value,
       time,
       player,
-      replayUrl: replay,
-      imageUrl: screenshot
+      replayUrl: replayUrl,
+      imageUrl: screenshot,
     };
 
     await (isEditing ? api.updateEntry(newEntry) : api.createEntry(newEntry));
@@ -131,7 +138,7 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
             getOptionLabel={(option: Car) =>
               `${option.name} [${option.carClass}]`
             }
-            options={cars.filter(c => c.type === raceType.value)}
+            options={cars.filter((c) => c.type === raceType.value)}
           />
         </Label>
 
@@ -154,13 +161,18 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
           options={{
             numericOnly: true,
             delimiters: [":", "."],
-            blocks: [2, 2, 3]
+            blocks: [2, 2, 3],
           }}
         />
 
-        <LabeledInput label="Player" value={player} onChange={setPlayer} />
+        <LabeledInput
+          label="Player"
+          disabled
+          value={player}
+          onChange={() => {}}
+        />
 
-        <LabeledInput label="Replay" value={replay} onChange={setReplay} />
+        <LabeledInput label="Replay" value={replayUrl} onChange={setReplay} />
 
         <Label>
           Screenshot

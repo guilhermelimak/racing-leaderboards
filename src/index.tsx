@@ -4,6 +4,7 @@ import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Global, css } from "@emotion/core";
 import { styles } from "./styles";
+import { Toaster } from "react-hot-toast";
 
 ReactDOM.render(
   <>
@@ -20,6 +21,7 @@ ReactDOM.render(
         }
       `}
     />
+    <Toaster />
     <App />
   </>,
   document.getElementById("root")

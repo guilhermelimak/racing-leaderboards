@@ -8,6 +8,7 @@ import { Flex } from "./UI/Flex";
 import { VideoIcon } from "../images/VideoIcon";
 import { CameraIcon } from "../images/CameraIcon";
 import { EntryModal } from "./EntryModal";
+import firebase from "firebase";
 
 interface Props {
   entry: Entry;
@@ -41,6 +42,8 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
 
+  const user = firebase.auth().currentUser;
+
   return (
     <>
       <EntryContainer onClick={() => setEditModalOpen(true)}>
@@ -50,12 +53,12 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
 
         <div>{entry.condition}</div>
 
-        <div>{cars.find(c => c.id === entry.carId)!.name}</div>
+        <div>{cars.find((c) => c.id === entry.carId)!.name}</div>
 
         <Flex justifyContent="center" alignItems="center">
           {entry.replayUrl && (
             <IconLink
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
               href={entry.replayUrl}
               target="_blank"
             >
@@ -64,9 +67,17 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
           )}
         </Flex>
 
-        <IconLink onClick={e => (e.stopPropagation(), setImageModalOpen(true))}>
-          <CameraIcon />
-        </IconLink>
+        {entry.imageUrl ? (
+          <IconLink
+            onClick={(e) => (e.stopPropagation(), setImageModalOpen(true))}
+          >
+            <CameraIcon />
+          </IconLink>
+        ) : (
+          <span style={{ color: "red", fontSize: "14px" }}>
+            Missing evidence
+          </span>
+        )}
       </EntryContainer>
 
       {imageModalOpen && (

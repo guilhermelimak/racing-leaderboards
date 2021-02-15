@@ -1,19 +1,32 @@
 * Doing
- - [ ] Add function to sort times
 
 * Tasks
- - [ ] Add auth to create and modify entries
- - [ ] Add modal to edit entry
-   - [ ] Add delete button
- - [ ] Add top players
- - [ ] Add time of day to entry model
- - [ ] Improve screenshot selection
-   - [ ] Add a better way to delete the current image
-   - [ ] Add a preview to the selected image
-   - [ ] Add a way to paste the image
-   - [ ] Add drag and drop to the image
- - [ ] Improve button styles
-  
+  - [ ] Add top players
+    Add a section showing the players with most records
+  - [ ] Improve entries filters code
+  - [ ] Don't flash login screen when user is already logged in. Add loading transition
+  - [ ] feat: Add logout
+
+  - [ ] Improve entry creation
+    - [ ] Add time of day to entry modal
+    - [ ] Add weather condition to entry modal
+    - [ ] Fill current user field automatically
+
+  - [ ] Improve screenshot upload
+    - [ ] Add loading state to image upload
+    - [ ] Handle errors on image upload
+    - [ ] Add a better way to delete the current image
+    - [ ] Add a preview to the selected image when hovering image button
+    - [ ] Add clipboard support to image upload
+    - [ ] Add drag and drop support to image upload
+
+  - Firebase backend
+   - [ ] Don't allow entry creation from unauthed user
+   - [ ] Only allow entry edit and delete from the owner of the entry or admin
+
 * Done
  - [X] Add icons to screenshots and video links
  - [X] Add formatting to time field
+ - [X] Add function to sort times
+ - [X] Add modal to edit entry
+   - [X] Add delete button

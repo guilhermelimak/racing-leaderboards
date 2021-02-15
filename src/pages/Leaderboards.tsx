@@ -69,10 +69,33 @@ export const Leaderboards = () => {
               )
               .filter((s) => !!entries.filter((e) => e.stageId === s.id).length)
               .map((stage) => (
-                <StageCollapse key={`stage-${stage.id}`} stage={stage}>
+                <StageCollapse
+                  key={`stage-${stage.id}`}
+                  stage={{
+                    ...stage,
+                    stage: `${stage.stage} - ${
+                      entries
+                        .filter((e) => e.stageId === stage.id)
+                        .sort(sortByTime)[0].time
+                    }`,
+                  }}
+                >
                   {entries
                     .filter((e) => e.stageId === stage.id)
                     .sort(sortByTime)
+                    .reduce(
+                      (acc, val) =>
+                        acc.find(
+                          (v) =>
+                            v.player.trim() === val.player.trim() &&
+                            v.carId === val.carId &&
+                            v.condition === val.condition &&
+                            v.raceType === val.raceType
+                        )
+                          ? acc
+                          : [...acc, val],
+                      [] as Entry[]
+                    )
                     .map((entry) => (
                       <LeaderboardEntry key={entry.id} entry={entry} />
                     ))}
