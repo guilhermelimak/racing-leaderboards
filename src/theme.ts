@@ -18,8 +18,8 @@ export const theme = {
     heading: 1.125,
   },
   colors: {
-    text: "#000",
-    background: "#fff",
+    background: "#000",
+    text: "#fff",
     primary: "#07c",
     secondary: "#30c",
     muted: "#f6f6f6",

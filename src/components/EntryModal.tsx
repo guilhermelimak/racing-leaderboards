@@ -6,11 +6,9 @@ import { Select } from "./UI/Select";
 import { stages } from "../dirt2-data/stages";
 import { api } from "../api";
 import styled from "@emotion/styled";
-import { LabeledInput, LabeledCleaveInput } from "./UI/LabeledInput";
-import { Button } from "theme-ui";
-import { Label } from "./UI/Label";
-import { Flex } from "theme-ui";
+import { Flex, Label, Button, Input } from "theme-ui";
 import firebase from "firebase";
+import { CleaveInput } from "./UI/LabeledInput";
 
 interface SelectOption<T> {
   value: T;
@@ -154,29 +152,35 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
           />
         </Label>
 
-        <LabeledCleaveInput
-          label="Time"
-          value={time}
-          onChange={setTime}
-          options={{
-            numericOnly: true,
-            delimiters: [":", "."],
-            blocks: [2, 2, 3],
-          }}
-        />
+        <Label>
+          Time
+          <CleaveInput
+            value={time}
+            onChange={(evt) => setTime(evt.target.value)}
+            options={{
+              numericOnly: true,
+              delimiters: [":", "."],
+              blocks: [2, 2, 3],
+            }}
+          />
+        </Label>
 
-        <LabeledInput
-          label="Player"
-          disabled
-          value={player}
-          onChange={() => {}}
-        />
+        <Label>
+          Player
+          <Input disabled value={player} onChange={() => {}} />
+        </Label>
 
-        <LabeledInput label="Replay" value={replayUrl} onChange={setReplay} />
+        <Label>
+          Replay url
+          <Input
+            value={replayUrl}
+            onChange={(evt) => setReplay(evt.target.value)}
+          />
+        </Label>
 
         <Label>
           Screenshot
-          <input
+          <Input
             style={{ display: "block", boxSizing: "border-box" }}
             accept="image/*"
             type="file"

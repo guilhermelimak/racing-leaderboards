@@ -1,25 +1,29 @@
-import React from "react";
+import React, { FC } from "react";
 import { useState, useEffect } from "react";
 import { Entry } from "../types";
 import { api } from "../api";
-import { LabeledInput } from "../components/UI/LabeledInput";
-import { Button } from "theme-ui";
+import { Box, Button, Input, Label } from "theme-ui";
 import { EntryModal } from "../components/EntryModal";
 import { StageCollapse } from "../components/StageCollapse";
 import { LeaderboardEntry } from "../components/LeaderboardEntry";
 import { stages } from "../dirt2-data/stages";
-import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
 import { Container } from "theme-ui";
 import firebase from "firebase";
 
-const Header = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 16px;
-`;
+const Header: FC = ({ children }) => (
+  <Box
+    sx={{
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "flex-end",
+      marginBottom: "16px",
+    }}
+  >
+    {children}
+  </Box>
+);
 
 export const Leaderboards = () => {
   const [filter, setFilter] = useState("");
@@ -42,12 +46,13 @@ export const Leaderboards = () => {
       <Container>
         <Header>
           {user?.email}
-          <LabeledInput
-            label="Filter"
-            marginLess={true}
-            value={filter}
-            onChange={setFilter}
-          />
+          <Label>
+            Filter
+            <Input
+              value={filter}
+              onChange={(evt) => setFilter(evt.target.value)}
+            />
+          </Label>
 
           <Button onClick={createNew}>Add new record</Button>
         </Header>

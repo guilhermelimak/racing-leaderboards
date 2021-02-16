@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
-import { Container } from "theme-ui";
-import { LabeledInput } from "../components/UI/LabeledInput";
+import { Container, Input, Label } from "theme-ui";
 import { Button } from "theme-ui";
 import { api } from "../api";
 import toast from "react-hot-toast";
@@ -35,12 +34,22 @@ export const Login = () => {
     <Layout>
       <Container>
         <FormContainer>
-          <LabeledInput label="Email" value={email} onChange={setEmail} />
-          <LabeledInput
-            label="Password"
-            value={password}
-            onChange={setPassword}
-          />
+          <Label>
+            Email
+            <Input
+              value={email}
+              type="email"
+              onChange={(evt) => setEmail(evt.target.value)}
+            />
+          </Label>
+          <Label>
+            Password
+            <Input
+              type="password"
+              value={password}
+              onChange={(evt) => setPassword(evt.target.value)}
+            />
+          </Label>
           <Button css={{ marginBottom: "2px" }} onClick={login}>
             Login
           </Button>

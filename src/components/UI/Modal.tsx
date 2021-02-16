@@ -27,12 +27,12 @@ const ModalWrapper = styled.div`
   align-items: center;
 `;
 
-const ModalBody = styled.div`
+const Body = styled.div`
   z-index: 1;
   background-color: ${styles.colors.background10};
   padding: 16px;
-  border-radius: 3px;
-  box-shadow: 0px 5px 5px 0 #00000080;
+  border-radius: 2px;
+  box-shadow: 0px 3px 1px 1px #00000080;
   max-width: 100%;
   max-height: 100%;
 
@@ -45,13 +45,13 @@ const ModalContent = styled.div`
   margin-top: 8px;
 `;
 
-const ModalHeader = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const ModalTitle = styled.h4`
+const Title = styled.h4`
   margin: 0;
   margin-bottom: 8px;
 `;
@@ -86,13 +86,13 @@ export const Modal: FC<Props> = ({ title, children, onModalClose }) => {
           }
         `}
       />
-      <ModalBody>
-        <ModalHeader>
-          <ModalTitle>{title}</ModalTitle>
+      <Body>
+        <Header>
+          <Title>{title}</Title>
           <CloseButton onClick={onModalClose}>X</CloseButton>
-        </ModalHeader>
+        </Header>
         <ModalContent>{children}</ModalContent>
-      </ModalBody>
+      </Body>
       <Overlay onClick={onModalClose} />
     </ModalWrapper>
   );
