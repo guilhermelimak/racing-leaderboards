@@ -1,16 +1,8 @@
 import React, { useState } from "react";
-import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
-import { Container } from "../components/UI/Container";
-import { LabeledInput } from "../components/UI/LabeledInput";
-import { Button } from "../components/UI/Button";
+import { Button, Flex, Container, Input, Label } from "theme-ui";
 import { api } from "../api";
 import toast from "react-hot-toast";
-
-const FormContainer = styled.div`
-  display: Flex;
-  flex-direction: column;
-`;
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,18 +26,28 @@ export const Login = () => {
   return (
     <Layout>
       <Container>
-        <FormContainer>
-          <LabeledInput label="Email" value={email} onChange={setEmail} />
-          <LabeledInput
-            label="Password"
-            value={password}
-            onChange={setPassword}
-          />
+        <Flex sx={{ flexDirection: "column" }}>
+          <Label>
+            Email
+            <Input
+              value={email}
+              type="email"
+              onChange={(evt) => setEmail(evt.target.value)}
+            />
+          </Label>
+          <Label>
+            Password
+            <Input
+              type="password"
+              value={password}
+              onChange={(evt) => setPassword(evt.target.value)}
+            />
+          </Label>
           <Button css={{ marginBottom: "2px" }} onClick={login}>
             Login
           </Button>
           <Button onClick={register}>Register</Button>
-        </FormContainer>
+        </Flex>
       </Container>
     </Layout>
   );

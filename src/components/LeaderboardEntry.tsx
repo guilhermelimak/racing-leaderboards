@@ -1,10 +1,8 @@
 import React, { FC, useState } from "react";
-import styled from "@emotion/styled";
 import { Entry } from "../types";
 import { Modal } from "./UI/Modal";
 import { cars } from "../dirt2-data/cars";
-import { styles } from "../styles";
-import { Flex } from "./UI/Flex";
+import { Box, Flex, Image, Link } from "theme-ui";
 import { VideoIcon } from "../images/VideoIcon";
 import { CameraIcon } from "../images/CameraIcon";
 import { EntryModal } from "./EntryModal";
@@ -13,29 +11,26 @@ interface Props {
   entry: Entry;
 }
 
-const EntryContainer = styled.div`
-  padding: 10px;
-  display: grid;
-  cursor: pointer;
-  grid-template-columns: repeat(3, 1fr) 2fr 0.3fr 0.3fr;
-  justify-items: center;
-  align-items: center;
-  border-bottom: 1px solid ${styles.colors.background};
+const EntryContainer: FC<{ onClick: () => void }> = ({ children, onClick }) => (
+  <Box
+    onClick={onClick}
+    sx={{
+      padding: "10px",
+      display: "grid",
+      cursor: "pointer",
+      gridTemplateColumns: "repeat(3, 1fr) 2fr 0.3fr 0.3fr",
+      justifyItems: "center",
+      alignItems: "center",
+      borderBottom: "1px solid background",
 
-  &:last-child {
-    border-bottom: 0;
-  }
-`;
-
-const IconLink = styled.a`
-  cursor: pointer;
-  height: 24px;
-`;
-
-const ModalImage = styled.img`
-  width: 100%;
-  height: 100%;
-`;
+      "&:last-child": {
+        borderBottom: "0",
+      },
+    }}
+  >
+    {children}
+  </Box>
+);
 
 export const LeaderboardEntry: FC<Props> = ({ entry }) => {
   const [imageModalOpen, setImageModalOpen] = useState(false);
@@ -52,30 +47,32 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
 
         <div>{cars.find((c) => c.id === entry.carId)!.name}</div>
 
-        <Flex justifyContent="center" alignItems="center">
+        <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
           {entry.replayUrl && (
-            <IconLink
+            <Link
+              sx={{ height: "24px" }}
               onClick={(e) => e.stopPropagation()}
               href={entry.replayUrl}
               target="_blank"
             >
               <VideoIcon />
-            </IconLink>
+            </Link>
           )}
         </Flex>
 
         {entry.imageUrl ? (
-          <IconLink
+          <Link
+            sx={{ height: "24px" }}
             onClick={(e) => {
               e.stopPropagation();
               setImageModalOpen(true);
             }}
           >
             <CameraIcon />
-          </IconLink>
+          </Link>
         ) : (
           <span style={{ color: "red", fontSize: "14px" }}>
-            Missing evidence
+            Missing evidence!
           </span>
         )}
       </EntryContainer>
@@ -85,7 +82,7 @@ export const LeaderboardEntry: FC<Props> = ({ entry }) => {
           title={`${entry.player} ${entry.time}`}
           onModalClose={() => setImageModalOpen(false)}
         >
-          <ModalImage src={entry.imageUrl} />
+          <Image src={entry.imageUrl} />
         </Modal>
       )}
 

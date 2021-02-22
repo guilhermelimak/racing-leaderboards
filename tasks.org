@@ -1,18 +1,20 @@
 * Doing
+  - [ ] refactor: Add theme ui and proper theming
 
 * Tasks
-  - [ ] Add top players
-    Add a section showing the players with most records
-  - [ ] Improve entries filters code
-  - [ ] Don't flash login screen when user is already logged in. Add loading transition
+  - [ ] refactor: Add react-hook-form to manage entry creating and update
+  - [ ] feat: Add top players
+    Add a section showing the players with most records, probably to the top of the page
+  - [ ] refactor: Improve entries filters code on leaderboards.tsx
+  - [ ] feat: Don't flash login screen when user is already logged in. Add loading transition
   - [ ] feat: Add logout
 
-  - [ ] Improve entry creation
+  - [ ] feat: Improve entry creation
     - [ ] Add time of day to entry modal
     - [ ] Add weather condition to entry modal
     - [ ] Fill current user field automatically
 
-  - [ ] Improve screenshot upload
+  - [ ] feat: Improve screenshot upload
     - [ ] Add loading state to image upload
     - [ ] Handle errors on image upload
     - [ ] Add a better way to delete the current image
@@ -21,8 +23,41 @@
     - [ ] Add drag and drop support to image upload
 
   - Firebase backend
-   - [ ] Don't allow entry creation from unauthed user
-   - [ ] Only allow entry edit and delete from the owner of the entry or admin
+   - [ ] feat: Don't allow entry creation from unauthed user
+   - [ ] feat: Only allow entry edit and delete from the owner of the entry or admin
+
+* To think about
+  - How's the database gonna look like
+    - Game
+      - Id
+      - CarClasses
+        - Id
+        - Name
+      - Tracks
+        - Id
+        - Location
+        - Distance
+        - Direction? (maybe. used in some games like dirt where you can run the same track with different directions)
+      - Cars
+        - Id
+        - Name
+        - Class
+      - Conditions
+        - Id
+        - Name
+
+    - Entries
+      - PlayerId
+      - Id
+      - GameId
+      - TrackId
+      - CarId
+      - ConditionId
+      - Time
+      - ReplayUrl
+      - ScreenshotUrl
+
+  - How to get info for other games? (probably start with pc2 and ac)
 
 * Done
  - [X] Add icons to screenshots and video links

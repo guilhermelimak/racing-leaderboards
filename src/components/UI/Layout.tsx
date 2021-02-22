@@ -1,9 +1,16 @@
-import styled from "@emotion/styled";
+import React, { FC } from "react";
+import { Box } from "theme-ui";
 
-export const Layout = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+export const Layout: FC = ({ children }) => (
+  <Box
+    sx={{
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    {children}
+  </Box>
+);

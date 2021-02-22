@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "@emotion/styled";
-import { styles } from "../../styles";
 import { Global, css } from "@emotion/core";
+import { Button } from "theme-ui";
 
 const Overlay = styled.div`
   position: fixed;
@@ -27,12 +27,12 @@ const ModalWrapper = styled.div`
   align-items: center;
 `;
 
-const ModalBody = styled.div`
+const Body = styled.div`
   z-index: 1;
-  background-color: ${styles.colors.background10};
+  background-color: background;
   padding: 16px;
-  border-radius: 3px;
-  box-shadow: 0px 5px 5px 0 #00000080;
+  border-radius: 2px;
+  box-shadow: 0px 3px 1px 1px #00000080;
   max-width: 100%;
   max-height: 100%;
 
@@ -41,23 +41,19 @@ const ModalBody = styled.div`
   }
 `;
 
-const ModalContent = styled.div`
+const Content = styled.div`
   margin-top: 8px;
 `;
 
-const ModalHeader = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const ModalTitle = styled.h4`
+const Title = styled.h4`
   margin: 0;
   margin-bottom: 8px;
-`;
-
-const CloseButton = styled.span`
-  cursor: pointer;
 `;
 
 interface Props {
@@ -66,17 +62,6 @@ interface Props {
 }
 
 export const Modal: FC<Props> = ({ title, children, onModalClose }) => {
-  // Close modal on esc, deactivated for now so we don't press esc by accident and
-  // lose what you had on the modal. Maybe enable in the future
-  // useEffect(() => {
-  //   const closeOnEsc = (event: KeyboardEvent) =>
-  //     event.keyCode === 27 && onModalClose();
-  //
-  //   document.addEventListener("keydown", closeOnEsc);
-  //
-  //   return () => document.removeEventListener("keydown", closeOnEsc);
-  // }, [, onModalClose]);
-
   return (
     <ModalWrapper>
       <Global
@@ -86,13 +71,13 @@ export const Modal: FC<Props> = ({ title, children, onModalClose }) => {
           }
         `}
       />
-      <ModalBody>
-        <ModalHeader>
-          <ModalTitle>{title}</ModalTitle>
-          <CloseButton onClick={onModalClose}>X</CloseButton>
-        </ModalHeader>
-        <ModalContent>{children}</ModalContent>
-      </ModalBody>
+      <Body>
+        <Header>
+          <Title>{title}</Title>
+          <Button onClick={onModalClose}>X</Button>
+        </Header>
+        <Content>{children}</Content>
+      </Body>
       <Overlay onClick={onModalClose} />
     </ModalWrapper>
   );

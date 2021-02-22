@@ -16,6 +16,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-select": "^3.0.13",
+    "@types/theme-ui": "^0.3.7",
     "cleave.js": "^1.6.0",
     "firebase": "^7.14.5",
     "polished": "^3.6.3",
@@ -25,6 +26,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
+    "theme-ui": "^0.3.5",
     "typescript": "~3.7.2"
   },
   "scripts": {
