@@ -11,7 +11,7 @@ export enum Locations {
   Finland = "Jämsä, Finland",
   Greece = "Argolis, Greece",
   Wales = "Powys, Wales",
-  Scotland = "Perth and Kinross, Scotland"
+  Scotland = "Perth and Kinross, Scotland",
 }
 
 export enum CarClasses {
@@ -33,23 +33,23 @@ export enum CarClasses {
   NR4 = "NR4/R4",
   UpTo2000cc = "Up to 2000cc",
   R5 = "R5",
-  RallyGT = "Rally GT"
+  RallyGT = "Rally GT",
 }
 
 export enum Directions {
   Forward = "Forward",
-  Reverse = "Reverse"
+  Reverse = "Reverse",
 }
 
 export enum Conditions {
   Dry = "Dry",
-  Wet = "Wet"
+  Wet = "Wet",
 }
 
 export interface Stage {
   id: number;
   location: Locations;
-  stage: string;
+  name: string;
   distance: string;
   direction: Directions;
 }
@@ -68,7 +68,7 @@ export interface Entry {
 
 export enum RaceTypes {
   Rally = "Rally",
-  RallyCross = "RallyCross"
+  RallyCross = "RallyCross",
 }
 
 export interface Car {

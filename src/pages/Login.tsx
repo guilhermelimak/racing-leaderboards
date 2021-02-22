@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import styled from "@emotion/styled";
 import { Layout } from "../components/UI/Layout";
-import { Container, Input, Label } from "theme-ui";
-import { Button } from "theme-ui";
+import { Button, Flex, Container, Input, Label } from "theme-ui";
 import { api } from "../api";
 import toast from "react-hot-toast";
-
-const FormContainer = styled.div`
-  display: Flex;
-  flex-direction: column;
-`;
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -33,7 +26,7 @@ export const Login = () => {
   return (
     <Layout>
       <Container>
-        <FormContainer>
+        <Flex sx={{ flexDirection: "column" }}>
           <Label>
             Email
             <Input
@@ -54,7 +47,7 @@ export const Login = () => {
             Login
           </Button>
           <Button onClick={register}>Register</Button>
-        </FormContainer>
+        </Flex>
       </Container>
     </Layout>
   );

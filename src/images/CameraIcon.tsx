@@ -1,13 +1,10 @@
 import React, { FC } from "react";
-import { styles } from "../styles";
 
 interface Props {
   fill?: string;
 }
 
-export const CameraIcon: FC<Props> = ({
-  fill = styles.colors.foreground20
-}) => (
+export const CameraIcon: FC<Props> = ({ fill = "white" }) => (
   <svg
     fill={fill}
     version="1.1"

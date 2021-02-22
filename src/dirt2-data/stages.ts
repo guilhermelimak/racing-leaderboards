@@ -4,1095 +4,1095 @@ export const stages: Stage[] = [
   {
     location: Locations.Argentina,
     direction: Directions.Forward,
-    stage: "Las Juntas",
+    name: "Las Juntas",
     distance: "8.25",
-    id: 0
+    id: 0,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Forward,
-    stage: "Valle de los puentes",
+    name: "Valle de los puentes",
     distance: "7.98",
-    id: 1
+    id: 1,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Forward,
-    stage: "Camino de acantilados y rocas",
+    name: "Camino de acantilados y rocas",
     distance: "5.30",
-    id: 2
+    id: 2,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Forward,
-    stage: "San Isidro",
+    name: "San Isidro",
     distance: "4.48",
-    id: 3
+    id: 3,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Forward,
-    stage: "Miraflores",
+    name: "Miraflores",
     distance: "3.35",
-    id: 4
+    id: 4,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Forward,
-    stage: "El Rodeo",
+    name: "El Rodeo",
     distance: "2.84",
-    id: 5
+    id: 5,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Reverse,
-    stage: "Camino a La Puerta",
+    name: "Camino a La Puerta",
     distance: "8.25",
-    id: 6
+    id: 6,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Reverse,
-    stage: "Valle de los puentes a la inversa",
+    name: "Valle de los puentes a la inversa",
     distance: "7.98",
-    id: 7
+    id: 7,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Reverse,
-    stage: "Camino de acantilados y rocas inverso",
+    name: "Camino de acantilados y rocas inverso",
     distance: "5.30",
-    id: 8
+    id: 8,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Reverse,
-    stage: "Camino a Coneta",
+    name: "Camino a Coneta",
     distance: "4.48",
-    id: 9
+    id: 9,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Reverse,
-    stage: "Huillaprima",
+    name: "Huillaprima",
     distance: "3.35",
-    id: 10
+    id: 10,
   },
   {
     location: Locations.Argentina,
     direction: Directions.Reverse,
-    stage: "La Merced",
+    name: "La Merced",
     distance: "2.84",
-    id: 11
+    id: 11,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Mount Kaye Pass",
+    name: "Mount Kaye Pass",
     distance: "12.50",
-    id: 12
+    id: 12,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Chandlers Creek",
+    name: "Chandlers Creek",
     distance: "12.34",
-    id: 13
+    id: 13,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Bondi Forest",
+    name: "Bondi Forest",
     distance: "7.01",
-    id: 14
+    id: 14,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Rockton Plains",
+    name: "Rockton Plains",
     distance: "6.89",
-    id: 15
+    id: 15,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Yambulla Mountain Ascent",
+    name: "Yambulla Mountain Ascent",
     distance: "6.64",
-    id: 16
+    id: 16,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Noorinbee Ridge Ascent",
+    name: "Noorinbee Ridge Ascent",
     distance: "5.28",
-    id: 17
+    id: 17,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Mount Kaye Pass Reverse",
+    name: "Mount Kaye Pass Reverse",
     distance: "12.50",
-    id: 18
+    id: 18,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Chandlers Creek Reverse",
+    name: "Chandlers Creek Reverse",
     distance: "12.34",
-    id: 19
+    id: 19,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Taylor Farm Sprint",
+    name: "Taylor Farm Sprint",
     distance: "7.01",
-    id: 20
+    id: 20,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Rockton Plains Reverse",
+    name: "Rockton Plains Reverse",
     distance: "6.89",
-    id: 21
+    id: 21,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Yambulla Mountain Descent",
+    name: "Yambulla Mountain Descent",
     distance: "6.64",
-    id: 22
+    id: 22,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Noorinbee Ridge Descent",
+    name: "Noorinbee Ridge Descent",
     distance: "5.28",
-    id: 23
+    id: 23,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Forward,
-    stage: "Waimarama Point Forward",
+    name: "Waimarama Point Forward",
     distance: "16.06",
-    id: 24
+    id: 24,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Forward,
-    stage: "Te Awanga Forward",
+    name: "Te Awanga Forward",
     distance: "11.48",
-    id: 25
+    id: 25,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Forward,
-    stage: "Waimarama Sprint Forward",
+    name: "Waimarama Sprint Forward",
     distance: "8.81",
-    id: 26
+    id: 26,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Forward,
-    stage: "Elsthorpe Sprint Forward",
+    name: "Elsthorpe Sprint Forward",
     distance: "7.32",
-    id: 27
+    id: 27,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Forward,
-    stage: "Ocean Beach Sprint Forward",
+    name: "Ocean Beach Sprint Forward",
     distance: "6.61",
-    id: 28
+    id: 28,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Forward,
-    stage: "Te Awanga Sprint Forward",
+    name: "Te Awanga Sprint Forward",
     distance: "4.79",
-    id: 29
+    id: 29,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Reverse,
-    stage: "Waimarama Point Reverse",
+    name: "Waimarama Point Reverse",
     distance: "16.06",
-    id: 30
+    id: 30,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Reverse,
-    stage: "Ocean Beach",
+    name: "Ocean Beach",
     distance: "11.48",
-    id: 31
+    id: 31,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Reverse,
-    stage: "Waimarama Sprint Reverse",
+    name: "Waimarama Sprint Reverse",
     distance: "8.81",
-    id: 32
+    id: 32,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Reverse,
-    stage: "Elsthorpe Sprint Reverse",
+    name: "Elsthorpe Sprint Reverse",
     distance: "7.32",
-    id: 33
+    id: 33,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Reverse,
-    stage: "Ocean Beach Sprint Reverse",
+    name: "Ocean Beach Sprint Reverse",
     distance: "6.61",
-    id: 34
+    id: 34,
   },
   {
     location: Locations.NewZealand,
     direction: Directions.Reverse,
-    stage: "Te Awanga Sprint Reverse",
+    name: "Te Awanga Sprint Reverse",
     distance: "4.79",
-    id: 35
+    id: 35,
   },
   {
     location: Locations.Spain,
     direction: Directions.Forward,
-    stage: "Comienzo De Bellriu",
+    name: "Comienzo De Bellriu",
     distance: "14.34",
-    id: 36
+    id: 36,
   },
   {
     location: Locations.Spain,
     direction: Directions.Forward,
-    stage: "Centenera",
+    name: "Centenera",
     distance: "10.57",
-    id: 37
+    id: 37,
   },
   {
     location: Locations.Spain,
     direction: Directions.Forward,
-    stage: "Ascenso por valle el Gualet",
+    name: "Ascenso por valle el Gualet",
     distance: "7.00",
-    id: 38
+    id: 38,
   },
   {
     location: Locations.Spain,
     direction: Directions.Forward,
-    stage: "Viñedos dentro del valle Parra",
+    name: "Viñedos dentro del valle Parra",
     distance: "6.81",
-    id: 39
+    id: 39,
   },
   {
     location: Locations.Spain,
     direction: Directions.Forward,
-    stage: "Viñedos Dardenyà",
+    name: "Viñedos Dardenyà",
     distance: "6.55",
-    id: 40
+    id: 40,
   },
   {
     location: Locations.Spain,
     direction: Directions.Forward,
-    stage: "Descenso por carretera",
+    name: "Descenso por carretera",
     distance: "4.58",
-    id: 41
+    id: 41,
   },
   {
     location: Locations.Spain,
     direction: Directions.Reverse,
-    stage: "Final de Bellriu",
+    name: "Final de Bellriu",
     distance: "14.34",
-    id: 42
+    id: 42,
   },
   {
     location: Locations.Spain,
     direction: Directions.Reverse,
-    stage: "Camino a Centenera",
+    name: "Camino a Centenera",
     distance: "10.57",
-    id: 43
+    id: 43,
   },
   {
     location: Locations.Spain,
     direction: Directions.Reverse,
-    stage: "Salida desde Montverd",
+    name: "Salida desde Montverd",
     distance: "7.00",
-    id: 44
+    id: 44,
   },
   {
     location: Locations.Spain,
     direction: Directions.Reverse,
-    stage: "Ascenso bosque Montverd",
+    name: "Ascenso bosque Montverd",
     distance: "6.81",
-    id: 45
+    id: 45,
   },
   {
     location: Locations.Spain,
     direction: Directions.Reverse,
-    stage: "Viñedos Dardenyà inversa",
+    name: "Viñedos Dardenyà inversa",
     distance: "6.55",
-    id: 46
+    id: 46,
   },
   {
     location: Locations.Spain,
     direction: Directions.Reverse,
-    stage: "Subida por carretera",
+    name: "Subida por carretera",
     distance: "4.58",
-    id: 47
+    id: 47,
   },
   {
     location: Locations.USA,
     direction: Directions.Forward,
-    stage: "Beaver Creek Trail Forward",
+    name: "Beaver Creek Trail Forward",
     distance: "12.86",
-    id: 48
+    id: 48,
   },
   {
     location: Locations.USA,
     direction: Directions.Forward,
-    stage: "North Fork Pass",
+    name: "North Fork Pass",
     distance: "12.50",
-    id: 49
+    id: 49,
   },
   {
     location: Locations.USA,
     direction: Directions.Forward,
-    stage: "Hancock Creek Burst",
+    name: "Hancock Creek Burst",
     distance: "6.89",
-    id: 50
+    id: 50,
   },
   {
     location: Locations.USA,
     direction: Directions.Forward,
-    stage: "Fuller Mountain Ascent",
+    name: "Fuller Mountain Ascent",
     distance: "6.64",
-    id: 51
+    id: 51,
   },
   {
     location: Locations.USA,
     direction: Directions.Forward,
-    stage: "Tolt Valley Sprint Forward",
+    name: "Tolt Valley Sprint Forward",
     distance: "6.10",
-    id: 52
+    id: 52,
   },
   {
     location: Locations.USA,
     direction: Directions.Forward,
-    stage: "Hancock Hill Sprint Forward",
+    name: "Hancock Hill Sprint Forward",
     distance: "6.01",
-    id: 53
+    id: 53,
   },
   {
     location: Locations.USA,
     direction: Directions.Reverse,
-    stage: "Beaver Creek Trail Reverse",
+    name: "Beaver Creek Trail Reverse",
     distance: "12.86",
-    id: 54
+    id: 54,
   },
   {
     location: Locations.USA,
     direction: Directions.Reverse,
-    stage: "North Fork Pass Reverse",
+    name: "North Fork Pass Reverse",
     distance: "12.50",
-    id: 55
+    id: 55,
   },
   {
     location: Locations.USA,
     direction: Directions.Reverse,
-    stage: "Fury Lake Depart",
+    name: "Fury Lake Depart",
     distance: "6.89",
-    id: 56
+    id: 56,
   },
   {
     location: Locations.USA,
     direction: Directions.Reverse,
-    stage: "Fuller Mountain Descent",
+    name: "Fuller Mountain Descent",
     distance: "6.64",
-    id: 57
+    id: 57,
   },
   {
     location: Locations.USA,
     direction: Directions.Reverse,
-    stage: "Tolt Valley Sprint Reverse",
+    name: "Tolt Valley Sprint Reverse",
     distance: "6.10",
-    id: 58
+    id: 58,
   },
   {
     location: Locations.USA,
     direction: Directions.Reverse,
-    stage: "Hancock Hill Sprint Reverse",
+    name: "Hancock Hill Sprint Reverse",
     distance: "6.01",
-    id: 59
+    id: 59,
   },
   {
     location: Locations.Poland,
     direction: Directions.Forward,
-    stage: "Zaróbka",
+    name: "Zaróbka",
     distance: "16.46",
-    id: 60
+    id: 60,
   },
   {
     location: Locations.Poland,
     direction: Directions.Forward,
-    stage: "Zienki",
+    name: "Zienki",
     distance: "13.42",
-    id: 61
+    id: 61,
   },
   {
     location: Locations.Poland,
     direction: Directions.Forward,
-    stage: "Marynka",
+    name: "Marynka",
     distance: "9.25",
-    id: 62
+    id: 62,
   },
   {
     location: Locations.Poland,
     direction: Directions.Forward,
-    stage: "Kopina",
+    name: "Kopina",
     distance: "7.03",
-    id: 63
+    id: 63,
   },
   {
     location: Locations.Poland,
     direction: Directions.Forward,
-    stage: "Lejno",
+    name: "Lejno",
     distance: "6.72",
-    id: 64
+    id: 64,
   },
   {
     location: Locations.Poland,
     direction: Directions.Forward,
-    stage: "Czarny Las",
+    name: "Czarny Las",
     distance: "6.62",
-    id: 65
+    id: 65,
   },
   {
     location: Locations.Poland,
     direction: Directions.Reverse,
-    stage: "Zagórze",
+    name: "Zagórze",
     distance: "16.46",
-    id: 66
+    id: 66,
   },
   {
     location: Locations.Poland,
     direction: Directions.Reverse,
-    stage: "Jezioro Rotcze",
+    name: "Jezioro Rotcze",
     distance: "13.42",
-    id: 67
+    id: 67,
   },
   {
     location: Locations.Poland,
     direction: Directions.Reverse,
-    stage: "Borysik",
+    name: "Borysik",
     distance: "9.25",
-    id: 68
+    id: 68,
   },
   {
     location: Locations.Poland,
     direction: Directions.Reverse,
-    stage: "Józefin",
+    name: "Józefin",
     distance: "7.03",
-    id: 69
+    id: 69,
   },
   {
     location: Locations.Poland,
     direction: Directions.Reverse,
-    stage: "Jagodno",
+    name: "Jagodno",
     distance: "6.82",
-    id: 70
+    id: 70,
   },
   {
     location: Locations.Poland,
     direction: Directions.Reverse,
-    stage: "Jezioro Lukie",
+    name: "Jezioro Lukie",
     distance: "6.62",
-    id: 71
+    id: 71,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Vallée descendante",
+    name: "Vallée descendante",
     distance: "10.87",
-    id: 72
+    id: 72,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Pra d’Alart",
+    name: "Pra d’Alart",
     distance: "9.83",
-    id: 73
+    id: 73,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Col de Turini - Départ en descente",
+    name: "Col de Turini - Départ en descente",
     distance: "6.85",
-    id: 74
+    id: 74,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Gordolon - Courte montée",
+    name: "Gordolon - Courte montée",
     distance: "5.17",
-    id: 75
+    id: 75,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Col de Turini sprint en montée",
+    name: "Col de Turini sprint en montée",
     distance: "4.73",
-    id: 76
+    id: 76,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Forward,
-    stage: "Route de Turini Descente",
+    name: "Route de Turini Descente",
     distance: "3.95",
-    id: 77
+    id: 77,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Route de Turini",
+    name: "Route de Turini",
     distance: "10.87",
-    id: 78
+    id: 78,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Col de Turini Départ",
+    name: "Col de Turini Départ",
     distance: "9.83",
-    id: 79
+    id: 79,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Route de Turini Montée",
+    name: "Route de Turini Montée",
     distance: "6.84",
-    id: 80
+    id: 80,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Col de Turini - Descente",
+    name: "Col de Turini - Descente",
     distance: "5.17",
-    id: 81
+    id: 81,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Col de Turini - Sprint en descente",
+    name: "Col de Turini - Sprint en descente",
     distance: "4.73",
-    id: 82
+    id: 82,
   },
   {
     location: Locations.Monaco,
     direction: Directions.Reverse,
-    stage: "Approche du Col de Turini - Montée",
+    name: "Approche du Col de Turini - Montée",
     distance: "3.95",
-    id: 83
+    id: 83,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Forward,
-    stage: "Hamra",
+    name: "Hamra",
     distance: "12.34",
-    id: 84
+    id: 84,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Forward,
-    stage: "Ransbysäter",
+    name: "Ransbysäter",
     distance: "11.98",
-    id: 85
+    id: 85,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Forward,
-    stage: "Elgsjön",
+    name: "Elgsjön",
     distance: "7.28",
-    id: 86
+    id: 86,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Forward,
-    stage: "Stor-jangen Sprint",
+    name: "Stor-jangen Sprint",
     distance: "6.69",
-    id: 87
+    id: 87,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Forward,
-    stage: "Älgsjön Sprint",
+    name: "Älgsjön Sprint",
     distance: "5.25",
-    id: 88
+    id: 88,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Forward,
-    stage: "Östra Hinnsjön",
+    name: "Östra Hinnsjön",
     distance: "5.19",
-    id: 89
+    id: 89,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Reverse,
-    stage: "Lysvik",
+    name: "Lysvik",
     distance: "12.34",
-    id: 90
+    id: 90,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Reverse,
-    stage: "Norraskoga",
+    name: "Norraskoga",
     distance: "11.98",
-    id: 91
+    id: 91,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Reverse,
-    stage: "Älgsjön",
+    name: "Älgsjön",
     distance: "7.28",
-    id: 92
+    id: 92,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Reverse,
-    stage: "Stor-jangen Sprint Reverse",
+    name: "Stor-jangen Sprint Reverse",
     distance: "6.69",
-    id: 93
+    id: 93,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Reverse,
-    stage: "Skogsrallyt",
+    name: "Skogsrallyt",
     distance: "5.25",
-    id: 94
+    id: 94,
   },
   {
     location: Locations.Sweden,
     direction: Directions.Reverse,
-    stage: "Björklangen",
+    name: "Björklangen",
     distance: "5.19",
-    id: 95
+    id: 95,
   },
   {
     location: Locations.Germany,
     direction: Directions.Forward,
-    stage: "Oberstein",
+    name: "Oberstein",
     distance: "11.67",
-    id: 96
+    id: 96,
   },
   {
     location: Locations.Germany,
     direction: Directions.Forward,
-    stage: "Hammerstein",
+    name: "Hammerstein",
     distance: "10.81",
-    id: 97
+    id: 97,
   },
   {
     location: Locations.Germany,
     direction: Directions.Forward,
-    stage: "Kreuzungsring",
+    name: "Kreuzungsring",
     distance: "6.31",
-    id: 98
+    id: 98,
   },
   {
     location: Locations.Germany,
     direction: Directions.Forward,
-    stage: "Verbundsring",
+    name: "Verbundsring",
     distance: "5.85",
-    id: 99
+    id: 99,
   },
   {
     location: Locations.Germany,
     direction: Directions.Forward,
-    stage: "Innerer Feld-Sprint",
+    name: "Innerer Feld-Sprint",
     distance: "5.56",
-    id: 100
+    id: 100,
   },
   {
     location: Locations.Germany,
     direction: Directions.Forward,
-    stage: "Waldaufstieg",
+    name: "Waldaufstieg",
     distance: "5.39",
-    id: 101
+    id: 101,
   },
   {
     location: Locations.Germany,
     direction: Directions.Reverse,
-    stage: "Frauenberg",
+    name: "Frauenberg",
     distance: "11.67",
-    id: 102
+    id: 102,
   },
   {
     location: Locations.Germany,
     direction: Directions.Reverse,
-    stage: "Ruschberg",
+    name: "Ruschberg",
     distance: "10.70",
-    id: 103
+    id: 103,
   },
   {
     location: Locations.Germany,
     direction: Directions.Reverse,
-    stage: "Kreuzungsring reverse",
+    name: "Kreuzungsring reverse",
     distance: "6.31",
-    id: 104
+    id: 104,
   },
   {
     location: Locations.Germany,
     direction: Directions.Reverse,
-    stage: "Verbundsring Reverse",
+    name: "Verbundsring Reverse",
     distance: "5.85",
-    id: 105
+    id: 105,
   },
   {
     location: Locations.Germany,
     direction: Directions.Reverse,
-    stage: "Innerer Feld-Sprint (umgekehrt)",
+    name: "Innerer Feld-Sprint (umgekehrt)",
     distance: "5.56",
-    id: 106
+    id: 106,
   },
   {
     location: Locations.Germany,
     direction: Directions.Reverse,
-    stage: "Waldabstieg",
+    name: "Waldabstieg",
     distance: "5.39",
-    id: 107
+    id: 107,
   },
   {
     location: Locations.Finland,
     direction: Directions.Forward,
-    stage: "Kakaristo",
+    name: "Kakaristo",
     distance: "16.20",
-    id: 108
+    id: 108,
   },
   {
     location: Locations.Finland,
     direction: Directions.Forward,
-    stage: "Kontinjärvi",
+    name: "Kontinjärvi",
     distance: "15.05",
-    id: 109
+    id: 109,
   },
   {
     location: Locations.Finland,
     direction: Directions.Forward,
-    stage: "Kotajärvi",
+    name: "Kotajärvi",
     distance: "8.10",
-    id: 110
+    id: 110,
   },
   {
     location: Locations.Finland,
     direction: Directions.Forward,
-    stage: "Iso Oksjärvi",
+    name: "Iso Oksjärvi",
     distance: "8.04",
-    id: 111
+    id: 111,
   },
   {
     location: Locations.Finland,
     direction: Directions.Forward,
-    stage: "Kailajärvi",
+    name: "Kailajärvi",
     distance: "7.51",
-    id: 112
+    id: 112,
   },
   {
     location: Locations.Finland,
     direction: Directions.Forward,
-    stage: "Naarajärvi",
+    name: "Naarajärvi",
     distance: "7.43",
-    id: 113
+    id: 113,
   },
   {
     location: Locations.Finland,
     direction: Directions.Reverse,
-    stage: "Pitkäjärvi",
+    name: "Pitkäjärvi",
     distance: "16.20",
-    id: 114
+    id: 114,
   },
   {
     location: Locations.Finland,
     direction: Directions.Reverse,
-    stage: "Hämelahti",
+    name: "Hämelahti",
     distance: "14.96",
-    id: 115
+    id: 115,
   },
   {
     location: Locations.Finland,
     direction: Directions.Reverse,
-    stage: "Oksala",
+    name: "Oksala",
     distance: "8.10",
-    id: 116
+    id: 116,
   },
   {
     location: Locations.Finland,
     direction: Directions.Reverse,
-    stage: "Järvenkylä",
+    name: "Järvenkylä",
     distance: "8.05",
-    id: 117
+    id: 117,
   },
   {
     location: Locations.Finland,
     direction: Directions.Reverse,
-    stage: "Jyrkysjärvi",
+    name: "Jyrkysjärvi",
     distance: "7.55",
-    id: 118
+    id: 118,
   },
   {
     location: Locations.Finland,
     direction: Directions.Reverse,
-    stage: "Paskuri",
+    name: "Paskuri",
     distance: "7.34",
-    id: 119
+    id: 119,
   },
   {
     location: Locations.Greece,
     direction: Directions.Forward,
-    stage: "Anodou Farmakas",
+    name: "Anodou Farmakas",
     distance: "9.60",
-    id: 120
+    id: 120,
   },
   {
     location: Locations.Greece,
     direction: Directions.Forward,
-    stage: "Pomona Érixi",
+    name: "Pomona Érixi",
     distance: "5.09",
-    id: 121
+    id: 121,
   },
   {
     location: Locations.Greece,
     direction: Directions.Forward,
-    stage: "Koryfi Dafni",
+    name: "Koryfi Dafni",
     distance: "4.50",
-    id: 122
+    id: 122,
   },
   {
     location: Locations.Greece,
     direction: Directions.Forward,
-    stage: "Perasma Platani",
+    name: "Perasma Platani",
     distance: "10.69",
-    id: 123
+    id: 123,
   },
   {
     location: Locations.Greece,
     direction: Directions.Forward,
-    stage: "Ourea Spevsi",
+    name: "Ourea Spevsi",
     distance: "5.74",
-    id: 124
+    id: 124,
   },
   {
     location: Locations.Greece,
     direction: Directions.Forward,
-    stage: "Abies Koiláda",
+    name: "Abies Koiláda",
     distance: "7.09",
-    id: 125
+    id: 125,
   },
   {
     location: Locations.Greece,
     direction: Directions.Reverse,
-    stage: "Kathodo Leontiou",
+    name: "Kathodo Leontiou",
     distance: "9.60",
-    id: 126
+    id: 126,
   },
   {
     location: Locations.Greece,
     direction: Directions.Reverse,
-    stage: "Fourkéta Kourva",
+    name: "Fourkéta Kourva",
     distance: "4.50",
-    id: 127
+    id: 127,
   },
   {
     location: Locations.Greece,
     direction: Directions.Reverse,
-    stage: "Ampelonas Ormi",
+    name: "Ampelonas Ormi",
     distance: "4.95",
-    id: 128
+    id: 128,
   },
   {
     location: Locations.Greece,
     direction: Directions.Reverse,
-    stage: "Tsiristra Théa",
+    name: "Tsiristra Théa",
     distance: "10.36",
-    id: 129
+    id: 129,
   },
   {
     location: Locations.Greece,
     direction: Directions.Reverse,
-    stage: "Pedines Epidaxi",
+    name: "Pedines Epidaxi",
     distance: "5.38",
-    id: 130
+    id: 130,
   },
   {
     location: Locations.Greece,
     direction: Directions.Reverse,
-    stage: "Ypsona tou Dasos",
+    name: "Ypsona tou Dasos",
     distance: "6.59",
-    id: 131
+    id: 131,
   },
   {
     location: Locations.Wales,
     direction: Directions.Forward,
-    stage: "River Severn Valley",
+    name: "River Severn Valley",
     distance: "11.40",
-    id: 132
+    id: 132,
   },
   {
     location: Locations.Wales,
     direction: Directions.Forward,
-    stage: "Sweet Lamb",
+    name: "Sweet Lamb",
     distance: "9.90",
-    id: 133
+    id: 133,
   },
   {
     location: Locations.Wales,
     direction: Directions.Forward,
-    stage: "Fferm Wynt",
+    name: "Fferm Wynt",
     distance: "5.70",
-    id: 134
+    id: 134,
   },
   {
     location: Locations.Wales,
     direction: Directions.Forward,
-    stage: "Dyffryn Afon",
+    name: "Dyffryn Afon",
     distance: "5.70",
-    id: 135
+    id: 135,
   },
   {
     location: Locations.Wales,
     direction: Directions.Forward,
-    stage: "Bidno Moorland",
+    name: "Bidno Moorland",
     distance: "4.90",
-    id: 136
+    id: 136,
   },
   {
     location: Locations.Wales,
     direction: Directions.Forward,
-    stage: "Pant Mawr",
+    name: "Pant Mawr",
     distance: "4.70",
-    id: 137
+    id: 137,
   },
   {
     location: Locations.Wales,
     direction: Directions.Reverse,
-    stage: "Bronfelen",
+    name: "Bronfelen",
     distance: "11.40",
-    id: 138
+    id: 138,
   },
   {
     location: Locations.Wales,
     direction: Directions.Reverse,
-    stage: "Geufron Forest",
+    name: "Geufron Forest",
     distance: "10.00",
-    id: 139
+    id: 139,
   },
   {
     location: Locations.Wales,
     direction: Directions.Reverse,
-    stage: "Fferm Wynt Reverse",
+    name: "Fferm Wynt Reverse",
     distance: "5.70",
-    id: 140
+    id: 140,
   },
   {
     location: Locations.Wales,
     direction: Directions.Reverse,
-    stage: "Dyffryn Afon Reverse",
+    name: "Dyffryn Afon Reverse",
     distance: "5.70",
-    id: 141
+    id: 141,
   },
   {
     location: Locations.Wales,
     direction: Directions.Reverse,
-    stage: "Bidno Moorland Reverse",
+    name: "Bidno Moorland Reverse",
     distance: "4.80",
-    id: 142
+    id: 142,
   },
   {
     location: Locations.Wales,
     direction: Directions.Reverse,
-    stage: "Pant Mawr Reverse",
+    name: "Pant Mawr Reverse",
     distance: "5.10",
-    id: 143
+    id: 143,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Forward,
-    stage: "Newhouse Bridge",
+    name: "Newhouse Bridge",
     distance: "12.86",
-    id: 144
+    id: 144,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Forward,
-    stage: "South Morningside",
+    name: "South Morningside",
     distance: "12.58",
-    id: 145
+    id: 145,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Forward,
-    stage: "Annbank Station",
+    name: "Annbank Station",
     distance: "7.77",
-    id: 146
+    id: 146,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Forward,
-    stage: "Rosebank Farm",
+    name: "Rosebank Farm",
     distance: "7.16",
-    id: 147
+    id: 147,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Forward,
-    stage: "Old Butterstone Muir",
+    name: "Old Butterstone Muir",
     distance: "5.82",
-    id: 148
+    id: 148,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Forward,
-    stage: "Glencastle Farm",
+    name: "Glencastle Farm",
     distance: "5.25",
-    id: 149
+    id: 149,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Reverse,
-    stage: "Newhouse Bridge Reverse",
+    name: "Newhouse Bridge Reverse",
     distance: "12.98",
-    id: 150
+    id: 150,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Reverse,
-    stage: "South Morningside Reverse",
+    name: "South Morningside Reverse",
     distance: "12.66",
-    id: 151
+    id: 151,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Reverse,
-    stage: "Annbank Station Reverse",
+    name: "Annbank Station Reverse",
     distance: "7.59",
-    id: 152
+    id: 152,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Reverse,
-    stage: "Rosebank Farm Reverse",
+    name: "Rosebank Farm Reverse",
     distance: "6.96",
-    id: 153
+    id: 153,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Reverse,
-    stage: "Old Butterstone Muir Reverse",
+    name: "Old Butterstone Muir Reverse",
     distance: "5.66",
-    id: 154
+    id: 154,
   },
   {
     location: Locations.Scotland,
     direction: Directions.Reverse,
-    stage: "Glencastle Farm Reverse",
+    name: "Glencastle Farm Reverse",
     distance: "5.24",
-    id: 155
-  }
+    id: 155,
+  },
 ];
 
 // Scraper

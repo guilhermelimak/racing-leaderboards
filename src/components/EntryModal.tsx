@@ -5,10 +5,9 @@ import { Car, Stage, RaceTypes, Conditions, Entry } from "../types";
 import { Select } from "./UI/Select";
 import { stages } from "../dirt2-data/stages";
 import { api } from "../api";
-import styled from "@emotion/styled";
 import { Flex, Label, Button, Input } from "theme-ui";
 import firebase from "firebase";
-import { CleaveInput } from "./UI/LabeledInput";
+import Cleave from "cleave.js/react";
 
 interface SelectOption<T> {
   value: T;
@@ -21,11 +20,6 @@ const option = <T extends string>(type: T): SelectOption<T> => ({
 });
 
 const raceTypes = [option(RaceTypes.Rally), option(RaceTypes.RallyCross)];
-
-const FormContainer = styled.div`
-  display: Flex;
-  flex-direction: column;
-`;
 
 interface Props {
   onModalClose: () => void;
@@ -114,7 +108,7 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
       title={`${isEditing ? "Edit" : "Create"} entry`}
       onModalClose={onModalClose}
     >
-      <FormContainer>
+      <Flex sx={{ flexDirection: "column" }}>
         <Label>
           Race type
           <Select
@@ -146,7 +140,7 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
             value={stage}
             onChange={(option: Stage) => setStage(option)}
             getOptionLabel={(option: Stage) =>
-              `${option.stage} [${option.location}]`
+              `${option.name} [${option.location}]`
             }
             options={stages}
           />
@@ -154,7 +148,7 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
 
         <Label>
           Time
-          <CleaveInput
+          <Cleave
             value={time}
             onChange={(evt) => setTime(evt.target.value)}
             options={{
@@ -188,7 +182,7 @@ export const EntryModal: FC<Props> = ({ onModalClose, isEditing, entry }) => {
             onChange={handleFileChosen}
           />
         </Label>
-      </FormContainer>
+      </Flex>
 
       <Flex sx={{ justifyContent: "space-between" }}>
         <div>

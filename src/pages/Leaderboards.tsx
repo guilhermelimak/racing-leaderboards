@@ -1,14 +1,13 @@
 import React, { FC } from "react";
 import { useState, useEffect } from "react";
-import { Entry } from "../types";
+import { Entry, Stage } from "../types";
 import { api } from "../api";
-import { Box, Button, Input, Label } from "theme-ui";
+import { Container, Box, Button, Input, Label } from "theme-ui";
 import { EntryModal } from "../components/EntryModal";
 import { StageCollapse } from "../components/StageCollapse";
 import { LeaderboardEntry } from "../components/LeaderboardEntry";
 import { stages } from "../dirt2-data/stages";
 import { Layout } from "../components/UI/Layout";
-import { Container } from "theme-ui";
 import firebase from "firebase";
 
 const Header: FC = ({ children }) => (
@@ -41,6 +40,31 @@ export const Leaderboards = () => {
 
   const user = firebase.auth().currentUser;
 
+  const entriesForStage = (id: number) =>
+    entries.filter(({ stageId }) => stageId === id);
+
+  const hasEntriesForStage = (stage: Stage) =>
+    !!entriesForStage(stage.id).length;
+
+  const dedupeEntries = (acc: Entry[], entry: Entry) =>
+    acc.find(
+      (e) =>
+        e.player.trim() === entry.player.trim() &&
+        e.carId === entry.carId &&
+        e.condition === entry.condition &&
+        e.raceType === entry.raceType
+    )
+      ? acc
+      : [...acc, entry];
+
+  const sortByTime = (a: Entry, b: Entry) =>
+    +a.time.replace(":", "").replace(".", "") -
+    +b.time.replace(":", "").replace(".", "");
+
+  const filterBySearch = ({ name, location }: Stage) =>
+    name.toLowerCase().includes(filter.toLowerCase()) ||
+    location.toLowerCase().includes(filter.toLowerCase());
+
   return (
     <Layout>
       <Container>
@@ -54,7 +78,9 @@ export const Leaderboards = () => {
             />
           </Label>
 
-          <Button onClick={createNew}>Add new record</Button>
+          <Button variant="secondary" onClick={createNew}>
+            Add new record
+          </Button>
         </Header>
 
         {isModalOpen && (
@@ -66,40 +92,21 @@ export const Leaderboards = () => {
 
         {entries.length
           ? stages
-              .filter(
-                (s) =>
-                  s.stage.toLowerCase().includes(filter.toLowerCase()) ||
-                  s.location.toLowerCase().includes(filter.toLowerCase())
-              )
-              .filter((s) => !!entries.filter((e) => e.stageId === s.id).length)
+              .filter(filterBySearch)
+              .filter(hasEntriesForStage)
               .map((stage) => (
                 <StageCollapse
                   key={`stage-${stage.id}`}
                   stage={{
                     ...stage,
-                    stage: `${stage.stage} - ${
-                      entries
-                        .filter((e) => e.stageId === stage.id)
-                        .sort(sortByTime)[0].time
+                    name: `${stage.name} - ${
+                      entriesForStage(stage.id).sort(sortByTime)[0].time
                     }`,
                   }}
                 >
-                  {entries
-                    .filter((e) => e.stageId === stage.id)
+                  {entriesForStage(stage.id)
                     .sort(sortByTime)
-                    .reduce(
-                      (acc, val) =>
-                        acc.find(
-                          (v) =>
-                            v.player.trim() === val.player.trim() &&
-                            v.carId === val.carId &&
-                            v.condition === val.condition &&
-                            v.raceType === val.raceType
-                        )
-                          ? acc
-                          : [...acc, val],
-                      [] as Entry[]
-                    )
+                    .reduce(dedupeEntries, [] as Entry[])
                     .map((entry) => (
                       <LeaderboardEntry key={entry.id} entry={entry} />
                     ))}
@@ -108,12 +115,5 @@ export const Leaderboards = () => {
           : "Loading entries..."}
       </Container>
     </Layout>
-  );
-};
-
-const sortByTime = (a: Entry, b: Entry) => {
-  return (
-    +a.time.replace(":", "").replace(".", "") -
-    +b.time.replace(":", "").replace(".", "")
   );
 };
